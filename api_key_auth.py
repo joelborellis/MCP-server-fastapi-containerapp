@@ -7,6 +7,7 @@ load_dotenv(".env")
 
 api_key_header = APIKeyHeader(name="x-api-key")
 
+
 def ensure_valid_api_key(api_key_header: str = Security(api_key_header)):
     def check_api_key(key: str) -> bool:
         print(f"API Key header:  {api_key_header}")

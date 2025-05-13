@@ -1,0 +1,1671 @@
+{
+  "header": "NCAAF News",
+  "link": {
+    "language": "en",
+    "rel": ["index", "desktop", "league"],
+    "href": "https://www.espn.com/college-football/",
+    "text": "All NCAAF News",
+    "shortText": "All News",
+    "isExternal": false,
+    "isPremium": false
+  },
+  "articles": [
+    {
+      "id": 45113396,
+      "nowId": "1-45113396",
+      "contentKey": "45113396-1-293-1",
+      "dataSourceIdentifier": "cd076626af05d",
+      "type": "Media",
+      "headline": "Flashback: Trey Hendrickson wreaks havoc with 3.5 sacks on MNF",
+      "description": "Trey Hendrickson helped power the Bengals' defense with 3.5 sacks vs. the Steelers on \"Monday Night Football.\"",
+      "lastModified": "2025-05-12T17:43:20Z",
+      "published": "2025-05-12T17:39:14Z",
+      "images": [
+        {
+          "name": "Flashback: Trey Hendrickson wreaks havoc with 3.5 sacks on MNF",
+          "caption": "Trey Hendrickson helped power the Bengals' defense with 3.5 sacks vs. the Steelers on \"Monday Night Football.\"",
+          "alt": "",
+          "height": 324,
+          "width": 576,
+          "url": "https://a.espncdn.com/media/motion/2025/0512/dm_250512_nfl_hendrickson_rip/dm_250512_nfl_hendrickson_rip.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "id": 166904,
+          "type": "athlete",
+          "uid": "s:20~l:28~a:3052743",
+          "guid": "7ab1c7ee-fd75-435d-b0c5-613879216083",
+          "description": "Trey Hendrickson",
+          "sportId": 28,
+          "athleteId": 3052743,
+          "athlete": {
+            "id": 3052743,
+            "description": "Trey Hendrickson",
+            "links": {
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/nfl/player/_/id/3052743/trey-hendrickson"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/nfl/player/_/id/3052743/trey-hendrickson"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 177758,
+          "type": "topic",
+          "guid": "17256dc5-749f-706a-efe0-b8d4f205c4f3",
+          "description": "nfl game footage",
+          "sportId": 0,
+          "topicId": 615
+        },
+        {
+          "id": 1288,
+          "type": "team",
+          "uid": "s:20~l:23~t:2226",
+          "guid": "87a34b7e-ceeb-2909-37c5-90c59fcc4deb",
+          "description": "Florida Atlantic Owls",
+          "sportId": 23,
+          "teamId": 2226,
+          "team": {
+            "id": 2226,
+            "description": "Florida Atlantic Owls",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2226/florida-atlantic-owls"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2226/florida-atlantic-owls"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 2664,
+          "type": "team",
+          "uid": "s:20~l:28~t:4",
+          "guid": "75b8623b-8926-b411-0476-3d3602b78523",
+          "description": "Cincinnati Bengals",
+          "sportId": 28,
+          "teamId": 4,
+          "team": {
+            "id": 4,
+            "description": "Cincinnati Bengals",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 9571,
+          "type": "league",
+          "uid": "s:20~l:23",
+          "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+          "description": "NCAA Football",
+          "sportId": 23,
+          "leagueId": 23,
+          "league": {
+            "id": 23,
+            "description": "NCAA Football",
+            "abbreviation": "NCAAF",
+            "links": {
+              "web": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              },
+              "mobile": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              }
+            }
+          }
+        },
+        {
+          "id": 9572,
+          "type": "league",
+          "uid": "s:20~l:28",
+          "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+          "description": "NFL",
+          "sportId": 28,
+          "leagueId": 28,
+          "league": {
+            "id": 28,
+            "description": "NFL",
+            "abbreviation": "NFL",
+            "links": {
+              "web": { "leagues": { "href": "https://www.espn.com/nfl/" } },
+              "mobile": { "leagues": { "href": "https://www.espn.com/nfl/" } }
+            }
+          }
+        },
+        { "type": "guid", "guid": "7ab1c7ee-fd75-435d-b0c5-613879216083" },
+        { "type": "guid", "guid": "17256dc5-749f-706a-efe0-b8d4f205c4f3" },
+        { "type": "guid", "guid": "87a34b7e-ceeb-2909-37c5-90c59fcc4deb" },
+        { "type": "guid", "guid": "c4cbbc93-c98c-3211-8f56-b05c1bfcfe63" },
+        { "type": "guid", "guid": "75b8623b-8926-b411-0476-3d3602b78523" },
+        { "type": "guid", "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e" },
+        { "type": "guid", "guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4" }
+      ],
+      "premium": false,
+      "links": {
+        "web": {
+          "href": "https://www.espn.com/video/clip?id=45113396",
+          "self": {
+            "href": "https://www.espn.com/video/clip?id=45113396",
+            "dsi": {
+              "href": "https://www.espn.com/video/clip?id=cd076626af05d"
+            }
+          },
+          "seo": { "href": "https://www.espn.com/video/clip/_/id/45113396" }
+        },
+        "api": {
+          "self": {
+            "href": "https://content.core.api.espn.com/v1/video/clips/45113396"
+          },
+          "artwork": {
+            "href": "https://artwork.api.espn.com/artwork/collections/media/dd4d2d6e-844b-4870-8301-a18cab313896"
+          }
+        },
+        "sportscenter": {
+          "href": "sportscenter://x-callback-url/showVideo?videoID=45113396&videoDSI=cd076626af05d"
+        }
+      }
+    },
+    {
+      "id": 45111708,
+      "nowId": "1-45111708",
+      "contentKey": "45111708-1-5-1",
+      "dataSourceIdentifier": "16e00dbc7eb0e",
+      "type": "HeadlineNews",
+      "headline": "Miami's Adarius Hayes released from hospital after car crash",
+      "description": "Miami linebacker Adarius Hayes, one of the drivers in a two-vehicle crash that left three people dead and others injured, has been released from the hospital.",
+      "lastModified": "2025-05-12T15:16:31Z",
+      "published": "2025-05-12T14:52:00Z",
+      "images": [
+        {
+          "dataSourceIdentifier": "6c4ec346f0ce6",
+          "id": 45094450,
+          "type": "header",
+          "name": "240907 Adarius Hayes photo [1296x729]",
+          "credit": "Samuel Lewis/Icon Sportswire",
+          "height": 729,
+          "width": 1296,
+          "url": "https://a.espncdn.com/photo/2025/0511/r1491000_1296x729_16-9.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "id": 409224,
+          "type": "topic",
+          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+          "description": "news",
+          "sportId": 0,
+          "topicId": 781
+        },
+        {
+          "id": 1119,
+          "type": "team",
+          "uid": "s:20~l:23~t:2390",
+          "guid": "2b3657a5-caae-31a2-899a-0d09df0f7bed",
+          "description": "Miami Hurricanes",
+          "sportId": 23,
+          "teamId": 2390,
+          "team": {
+            "id": 2390,
+            "description": "Miami Hurricanes",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2390/miami-hurricanes"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2390/miami-hurricanes"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 9571,
+          "type": "league",
+          "uid": "s:20~l:23",
+          "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+          "description": "NCAA Football",
+          "sportId": 23,
+          "leagueId": 23,
+          "league": {
+            "id": 23,
+            "description": "NCAA Football",
+            "abbreviation": "NCAAF",
+            "links": {
+              "web": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              },
+              "mobile": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              }
+            }
+          }
+        },
+        {
+          "id": 671620,
+          "type": "athlete",
+          "uid": "s:20~l:23~a:5079440",
+          "guid": "9e318f86-30d6-3e1f-9552-63ca25e1ab49",
+          "description": "Adarius Hayes",
+          "sportId": 23,
+          "athleteId": 5079440,
+          "athlete": {
+            "id": 5079440,
+            "description": "Adarius Hayes",
+            "links": {
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/college-football/player/_/id/5079440/adarius-hayes"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/college-football/player/_/id/5079440/adarius-hayes"
+                }
+              }
+            }
+          }
+        },
+        { "type": "guid", "guid": "52313677-19f8-b106-ec91-d8d17e6087fe" },
+        { "type": "guid", "guid": "2e36fa17-1467-30cc-ab7a-6f84ea400a49" },
+        { "type": "guid", "guid": "2b3657a5-caae-31a2-899a-0d09df0f7bed" },
+        { "type": "guid", "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e" },
+        { "type": "guid", "guid": "9e318f86-30d6-3e1f-9552-63ca25e1ab49" }
+      ],
+      "premium": false,
+      "links": {
+        "web": {
+          "href": "https://www.espn.com/college-football/story/_/id/45111708/miami-adarius-hayes-released-hospital-car-crash"
+        },
+        "mobile": { "href": "http://m.espn.go.com/ncf/story?storyId=45111708" },
+        "api": {
+          "self": {
+            "href": "https://content.core.api.espn.com/v1/sports/news/45111708"
+          }
+        },
+        "app": {
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showStory?uid=45111708"
+          }
+        }
+      }
+    },
+    {
+      "id": 44919006,
+      "nowId": "1-44919006",
+      "contentKey": "44919006-1-6-1",
+      "dataSourceIdentifier": "e5e19396b5660",
+      "type": "Story",
+      "headline": "How every five-star college football recruit fits at his new school",
+      "description": "There are 21 five-stars in the Class of 2026. We look at how they got to their teams and what they'll do in college.",
+      "lastModified": "2025-05-12T13:20:23Z",
+      "published": "2025-05-12T13:16:00Z",
+      "images": [
+        {
+          "dataSourceIdentifier": "b90173d1a81f5",
+          "id": 40534353,
+          "type": "header",
+          "name": "Chris Henry Jr. [608x342]",
+          "caption": "Chris Henry Jr. committed to Ohio State in July of 2023.",
+          "credit": "3Step",
+          "height": 342,
+          "width": 608,
+          "url": "https://a.espncdn.com/photo/2024/0710/r1356987_608x342_16-9.jpg"
+        },
+        {
+          "dataSourceIdentifier": "95c5f1856b34f",
+          "id": 44952231,
+          "type": "header",
+          "name": "Keenyi Pepe [800x800]",
+          "caption": "Keenyi Pepe adds another impressive building block to USC's OL class.",
+          "credit": "UA Next",
+          "height": 800,
+          "width": 800,
+          "url": "https://a.espncdn.com/photo/2025/0501/r1486564_800x800_1-1.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "id": 409222,
+          "type": "topic",
+          "guid": "b66e959d-b64e-9bd6-7d5c-1bcb0d53c0cb",
+          "description": "daily",
+          "sportId": 0,
+          "topicId": 779
+        },
+        {
+          "id": 1098,
+          "type": "team",
+          "uid": "s:20~l:23~t:99",
+          "guid": "b9a22bd6-7449-92bc-0e95-a6d8da673b3e",
+          "description": "LSU Tigers",
+          "sportId": 23,
+          "teamId": 99,
+          "team": {
+            "id": 99,
+            "description": "LSU Tigers",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/99/lsu-tigers"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/99/lsu-tigers"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1084,
+          "type": "team",
+          "uid": "s:20~l:23~t:194",
+          "guid": "2fc3b71f-8247-22a5-f6da-df3902cbb438",
+          "description": "Ohio State Buckeyes",
+          "sportId": 23,
+          "teamId": 194,
+          "team": {
+            "id": 194,
+            "description": "Ohio State Buckeyes",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/194/ohio-state-buckeyes"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/194/ohio-state-buckeyes"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1091,
+          "type": "team",
+          "uid": "s:20~l:23~t:61",
+          "guid": "4351fef8-fe69-53b1-ea57-72684b36ec35",
+          "description": "Georgia Bulldogs",
+          "sportId": 23,
+          "teamId": 61,
+          "team": {
+            "id": 61,
+            "description": "Georgia Bulldogs",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/61/georgia-bulldogs"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/61/georgia-bulldogs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1124,
+          "type": "team",
+          "uid": "s:20~l:23~t:248",
+          "guid": "508c397e-91bb-ed5c-a21c-d8faf8726265",
+          "description": "Houston Cougars",
+          "sportId": 23,
+          "teamId": 248,
+          "team": {
+            "id": 248,
+            "description": "Houston Cougars",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/248/houston-cougars"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/248/houston-cougars"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 33309,
+          "type": "league",
+          "guid": "ecda0f44-47cb-4ab9-a1aa-574c35ee6891",
+          "description": "Football Recruiting",
+          "sportId": 0,
+          "leagueId": 3540,
+          "league": {
+            "id": 3540,
+            "description": "Football Recruiting",
+            "links": { "web": {}, "mobile": {} }
+          }
+        },
+        {
+          "id": 703809,
+          "type": "contributor",
+          "guid": "be9825bd-e9ef-307f-be9b-f49915bee655",
+          "description": "Eli Lederman",
+          "slug": "eli-lederman",
+          "contributor": {
+            "id": 4047,
+            "description": "Eli Lederman",
+            "links": { "web": {}, "mobile": {} }
+          }
+        },
+        {
+          "id": 1060,
+          "type": "team",
+          "uid": "s:20~l:23~t:120",
+          "guid": "7dae6b2a-7a04-6d4d-6e35-a625805c6c0a",
+          "description": "Maryland Terrapins",
+          "sportId": 23,
+          "teamId": 120,
+          "team": {
+            "id": 120,
+            "description": "Maryland Terrapins",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/120/maryland-terrapins"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/120/maryland-terrapins"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1095,
+          "type": "team",
+          "uid": "s:20~l:23~t:2633",
+          "guid": "de276cc4-dc02-159f-0c1c-67ddaf02a9ea",
+          "description": "Tennessee Volunteers",
+          "sportId": 23,
+          "teamId": 2633,
+          "team": {
+            "id": 2633,
+            "description": "Tennessee Volunteers",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2633/tennessee-volunteers"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2633/tennessee-volunteers"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 9571,
+          "type": "league",
+          "uid": "s:20~l:23",
+          "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+          "description": "NCAA Football",
+          "sportId": 23,
+          "leagueId": 23,
+          "league": {
+            "id": 23,
+            "description": "NCAA Football",
+            "abbreviation": "NCAAF",
+            "links": {
+              "web": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              },
+              "mobile": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              }
+            }
+          }
+        },
+        {
+          "id": 1111,
+          "type": "team",
+          "uid": "s:20~l:23~t:2483",
+          "guid": "116d333f-cf1a-0c67-d450-36a834af56de",
+          "description": "Oregon Ducks",
+          "sportId": 23,
+          "teamId": 2483,
+          "team": {
+            "id": 2483,
+            "description": "Oregon Ducks",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2483/oregon-ducks"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2483/oregon-ducks"
+                }
+              }
+            }
+          }
+        },
+        { "type": "guid", "guid": "b66e959d-b64e-9bd6-7d5c-1bcb0d53c0cb" },
+        { "type": "guid", "guid": "b9a22bd6-7449-92bc-0e95-a6d8da673b3e" },
+        { "type": "guid", "guid": "2fc3b71f-8247-22a5-f6da-df3902cbb438" },
+        { "type": "guid", "guid": "2bba3706-6f29-3e68-8b28-583a0d4a9caa" },
+        { "type": "guid", "guid": "4351fef8-fe69-53b1-ea57-72684b36ec35" },
+        { "type": "guid", "guid": "508c397e-91bb-ed5c-a21c-d8faf8726265" },
+        { "type": "guid", "guid": "ecda0f44-47cb-4ab9-a1aa-574c35ee6891" },
+        { "type": "guid", "guid": "be9825bd-e9ef-307f-be9b-f49915bee655" },
+        { "type": "guid", "guid": "7dae6b2a-7a04-6d4d-6e35-a625805c6c0a" },
+        { "type": "guid", "guid": "057d08ff-5067-3b91-946b-d941c8aecde5" },
+        { "type": "guid", "guid": "de276cc4-dc02-159f-0c1c-67ddaf02a9ea" },
+        { "type": "guid", "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e" },
+        { "type": "guid", "guid": "2845c2f1-d2ef-3f34-aaa2-469687c28cec" },
+        { "type": "guid", "guid": "116d333f-cf1a-0c67-d450-36a834af56de" }
+      ],
+      "premium": false,
+      "links": {
+        "web": {
+          "href": "https://www.espn.com/college-football/recruiting/story/_/id/44919006/ncaa-football-recruiting-2026-five-stars-fits-analysis"
+        },
+        "mobile": { "href": "http://m.espn.go.com/ncf/story?storyId=44919006" },
+        "api": {
+          "self": {
+            "href": "https://content.core.api.espn.com/v1/sports/news/44919006"
+          }
+        },
+        "app": {
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showStory?uid=44919006"
+          }
+        }
+      },
+      "byline": "Craig Haubert, Eli Lederman and Tom Luginbill"
+    },
+    {
+      "id": 45074124,
+      "nowId": "1-45074124",
+      "contentKey": "45074124-1-6-1",
+      "dataSourceIdentifier": "4aabf81c2e2da",
+      "type": "Story",
+      "headline": "College football's top 2025 newcomer classes",
+      "description": "Building a roster isn't just about recruiting. Combining prep talent with great transfers is key in college football and these teams did it best.",
+      "lastModified": "2025-05-12T01:09:06Z",
+      "published": "2025-05-12T11:00:00Z",
+      "images": [
+        {
+          "dataSourceIdentifier": "e06f84f85319d",
+          "id": 45085004,
+          "type": "header",
+          "name": "Dan Lanning [608x342]",
+          "credit": "Robert Goddin/Imagn Images",
+          "height": 342,
+          "width": 608,
+          "url": "https://a.espncdn.com/photo/2025/0510/r1490750_608x342_16-9.jpg"
+        },
+        {
+          "dataSourceIdentifier": "d014a2156cd3a",
+          "id": 44504030,
+          "type": "header",
+          "name": "Solomon Thomas [600x400]",
+          "caption": "Freshman tackle Solomon Thomas could step in and start at LSU.",
+          "credit": "Under Armour",
+          "height": 400,
+          "width": 600,
+          "url": "https://a.espncdn.com/photo/2025/0402/r1472669_600x400_3-2.jpg"
+        },
+        {
+          "dataSourceIdentifier": "99827b573dc7a",
+          "id": 44043769,
+          "type": "header",
+          "name": "Bryce Underwood [600x400]",
+          "caption": "Bryce Underwood, the No. 1 2025 recruit, could be Michigan's starting QB as a freshman.",
+          "credit": "AP Photo/Paul Sancya",
+          "height": 400,
+          "width": 600,
+          "url": "https://a.espncdn.com/photo/2025/0227/r1457478_600x400_3-2.jpg"
+        },
+        {
+          "dataSourceIdentifier": "7c6bc978ff8fd",
+          "id": 42720221,
+          "type": "header",
+          "name": "Julian Humphrey [600x400]",
+          "caption": "Julian Humphrey will bring starting experience to Texas A&M's secondary.",
+          "credit": "Photo by Alex Slitz/Getty Images",
+          "height": 400,
+          "width": 600,
+          "url": "https://a.espncdn.com/photo/2024/1201/r1422200_600x400_3-2.jpg"
+        },
+        {
+          "dataSourceIdentifier": "509b08cb79e26",
+          "id": 44686373,
+          "type": "header",
+          "name": "Jadyn Ott [600x400]",
+          "caption": "Running back Jadyn Ott adds to Oklahoma's impressive portal haul of offensive players.",
+          "credit": "Matt Cashore/USA TODAY Sports",
+          "height": 400,
+          "width": 600,
+          "url": "https://a.espncdn.com/photo/2025/0415/r1479151_600x400_3-2.jpg"
+        },
+        {
+          "type": "Media",
+          "name": "Pete Thamel: It's a 'weird moment in time' for college football",
+          "caption": "Pete Thamel joins Pat McAfee to discuss the lack of rules for the upcoming college football season.",
+          "height": 324,
+          "width": 576,
+          "url": "https://a.espncdn.com/media/motion/2025/0509/ss_20250509_141515101_2854321/ss_20250509_141515101_2854321.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "id": 1076,
+          "type": "team",
+          "uid": "s:20~l:23~t:245",
+          "guid": "014788cd-231c-e33e-32c3-7e8d9a1e530f",
+          "description": "Texas A&M Aggies",
+          "sportId": 23,
+          "teamId": 245,
+          "team": {
+            "id": 245,
+            "description": "Texas A&M Aggies",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/245/texas-am-aggies"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/245/texas-am-aggies"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1100,
+          "type": "team",
+          "uid": "s:20~l:23~t:333",
+          "guid": "258022c1-fed4-a0ce-c017-1f853c81d1a8",
+          "description": "Alabama Crimson Tide",
+          "sportId": 23,
+          "teamId": 333,
+          "team": {
+            "id": 333,
+            "description": "Alabama Crimson Tide",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/333/alabama-crimson-tide"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/333/alabama-crimson-tide"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1080,
+          "type": "team",
+          "uid": "s:20~l:23~t:84",
+          "guid": "bd06efe1-3050-2356-37c1-4b3fef1c29be",
+          "description": "Indiana Hoosiers",
+          "sportId": 23,
+          "teamId": 84,
+          "team": {
+            "id": 84,
+            "description": "Indiana Hoosiers",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/84/indiana-hoosiers"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/84/indiana-hoosiers"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1090,
+          "type": "team",
+          "uid": "s:20~l:23~t:57",
+          "guid": "fe74bfd9-c15e-7b3a-ab25-ff4e5636282e",
+          "description": "Florida Gators",
+          "sportId": 23,
+          "teamId": 57,
+          "team": {
+            "id": 57,
+            "description": "Florida Gators",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/57/florida-gators"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/57/florida-gators"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1119,
+          "type": "team",
+          "uid": "s:20~l:23~t:2390",
+          "guid": "2b3657a5-caae-31a2-899a-0d09df0f7bed",
+          "description": "Miami Hurricanes",
+          "sportId": 23,
+          "teamId": 2390,
+          "team": {
+            "id": 2390,
+            "description": "Miami Hurricanes",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2390/miami-hurricanes"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2390/miami-hurricanes"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1058,
+          "type": "team",
+          "uid": "s:20~l:23~t:52",
+          "guid": "fa181128-4809-a209-1add-d5a3b0cefd3c",
+          "description": "Florida State Seminoles",
+          "sportId": 23,
+          "teamId": 52,
+          "team": {
+            "id": 52,
+            "description": "Florida State Seminoles",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/52/florida-state-seminoles"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/52/florida-state-seminoles"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1091,
+          "type": "team",
+          "uid": "s:20~l:23~t:61",
+          "guid": "4351fef8-fe69-53b1-ea57-72684b36ec35",
+          "description": "Georgia Bulldogs",
+          "sportId": 23,
+          "teamId": 61,
+          "team": {
+            "id": 61,
+            "description": "Georgia Bulldogs",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/61/georgia-bulldogs"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/61/georgia-bulldogs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1077,
+          "type": "team",
+          "uid": "s:20~l:23~t:251",
+          "guid": "013a8bab-0dd5-f6a0-45e6-1128a124f34b",
+          "description": "Texas Longhorns",
+          "sportId": 23,
+          "teamId": 251,
+          "team": {
+            "id": 251,
+            "description": "Texas Longhorns",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/251/texas-longhorns"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/251/texas-longhorns"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 409222,
+          "type": "topic",
+          "guid": "b66e959d-b64e-9bd6-7d5c-1bcb0d53c0cb",
+          "description": "daily",
+          "sportId": 0,
+          "topicId": 779
+        },
+        {
+          "id": 1098,
+          "type": "team",
+          "uid": "s:20~l:23~t:99",
+          "guid": "b9a22bd6-7449-92bc-0e95-a6d8da673b3e",
+          "description": "LSU Tigers",
+          "sportId": 23,
+          "teamId": 99,
+          "team": {
+            "id": 99,
+            "description": "LSU Tigers",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/99/lsu-tigers"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/99/lsu-tigers"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1094,
+          "type": "team",
+          "uid": "s:20~l:23~t:2579",
+          "guid": "6509690a-8cf2-b255-5af7-b6a1a1010ac4",
+          "description": "South Carolina Gamecocks",
+          "sportId": 23,
+          "teamId": 2579,
+          "team": {
+            "id": 2579,
+            "description": "South Carolina Gamecocks",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2579/south-carolina-gamecocks"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2579/south-carolina-gamecocks"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 9571,
+          "type": "league",
+          "uid": "s:20~l:23",
+          "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+          "description": "NCAA Football",
+          "sportId": 23,
+          "leagueId": 23,
+          "league": {
+            "id": 23,
+            "description": "NCAA Football",
+            "abbreviation": "NCAAF",
+            "links": {
+              "web": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              },
+              "mobile": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              }
+            }
+          }
+        },
+        {
+          "id": 1060,
+          "type": "team",
+          "uid": "s:20~l:23~t:120",
+          "guid": "7dae6b2a-7a04-6d4d-6e35-a625805c6c0a",
+          "description": "Maryland Terrapins",
+          "sportId": 23,
+          "teamId": 120,
+          "team": {
+            "id": 120,
+            "description": "Maryland Terrapins",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/120/maryland-terrapins"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/120/maryland-terrapins"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1111,
+          "type": "team",
+          "uid": "s:20~l:23~t:2483",
+          "guid": "116d333f-cf1a-0c67-d450-36a834af56de",
+          "description": "Oregon Ducks",
+          "sportId": 23,
+          "teamId": 2483,
+          "team": {
+            "id": 2483,
+            "description": "Oregon Ducks",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2483/oregon-ducks"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2483/oregon-ducks"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1067,
+          "type": "team",
+          "uid": "s:20~l:23~t:38",
+          "guid": "78bdee7f-11f2-3bf9-f93e-a8e3831c2792",
+          "description": "Colorado Buffaloes",
+          "sportId": 23,
+          "teamId": 38,
+          "team": {
+            "id": 38,
+            "description": "Colorado Buffaloes",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/38/colorado-buffaloes"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/38/colorado-buffaloes"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1082,
+          "type": "team",
+          "uid": "s:20~l:23~t:130",
+          "guid": "ea1660a4-aeb8-b9da-7d9f-fcd70d3a0162",
+          "description": "Michigan Wolverines",
+          "sportId": 23,
+          "teamId": 130,
+          "team": {
+            "id": 130,
+            "description": "Michigan Wolverines",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/130/michigan-wolverines"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/130/michigan-wolverines"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1069,
+          "type": "team",
+          "uid": "s:20~l:23~t:142",
+          "guid": "6bbe4a57-263d-12b2-639a-f1db99afcac9",
+          "description": "Missouri Tigers",
+          "sportId": 23,
+          "teamId": 142,
+          "team": {
+            "id": 142,
+            "description": "Missouri Tigers",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/142/missouri-tigers"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/142/missouri-tigers"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 33309,
+          "type": "league",
+          "guid": "ecda0f44-47cb-4ab9-a1aa-574c35ee6891",
+          "description": "Football Recruiting",
+          "sportId": 0,
+          "leagueId": 3540,
+          "league": {
+            "id": 3540,
+            "description": "Football Recruiting",
+            "links": { "web": {}, "mobile": {} }
+          }
+        },
+        {
+          "id": 1074,
+          "type": "team",
+          "uid": "s:20~l:23~t:201",
+          "guid": "67d60bca-1b6b-8d78-81ae-6889e883bb96",
+          "description": "Oklahoma Sooners",
+          "sportId": 23,
+          "teamId": 201,
+          "team": {
+            "id": 201,
+            "description": "Oklahoma Sooners",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/201/oklahoma-sooners"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/201/oklahoma-sooners"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1078,
+          "type": "team",
+          "uid": "s:20~l:23~t:2641",
+          "guid": "4350bc91-1a0d-8292-bf66-9687147703f0",
+          "description": "Texas Tech Red Raiders",
+          "sportId": 23,
+          "teamId": 2641,
+          "team": {
+            "id": 2641,
+            "description": "Texas Tech Red Raiders",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2641/texas-tech-red-raiders"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2641/texas-tech-red-raiders"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1063,
+          "type": "team",
+          "uid": "s:20~l:23~t:153",
+          "guid": "30776972-a2c7-1cf2-4530-1c3820f5a4ea",
+          "description": "North Carolina Tar Heels",
+          "sportId": 23,
+          "teamId": 153,
+          "team": {
+            "id": 153,
+            "description": "North Carolina Tar Heels",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/153/north-carolina-tar-heels"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/153/north-carolina-tar-heels"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1070,
+          "type": "team",
+          "uid": "s:20~l:23~t:158",
+          "guid": "e9635416-dfc2-d9d6-ff1c-3e0f70ab2d8c",
+          "description": "Nebraska Cornhuskers",
+          "sportId": 23,
+          "teamId": 158,
+          "team": {
+            "id": 158,
+            "description": "Nebraska Cornhuskers",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/158/nebraska-cornhuskers"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/158/nebraska-cornhuskers"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1084,
+          "type": "team",
+          "uid": "s:20~l:23~t:194",
+          "guid": "2fc3b71f-8247-22a5-f6da-df3902cbb438",
+          "description": "Ohio State Buckeyes",
+          "sportId": 23,
+          "teamId": 194,
+          "team": {
+            "id": 194,
+            "description": "Ohio State Buckeyes",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/194/ohio-state-buckeyes"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/194/ohio-state-buckeyes"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1096,
+          "type": "team",
+          "uid": "s:20~l:23~t:2",
+          "guid": "6a581b24-2e59-a315-6f91-e85d722f4e9f",
+          "description": "Auburn Tigers",
+          "sportId": 23,
+          "teamId": 2,
+          "team": {
+            "id": 2,
+            "description": "Auburn Tigers",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2/auburn-tigers"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2/auburn-tigers"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1164,
+          "type": "team",
+          "uid": "s:20~l:23~t:87",
+          "guid": "ebc2999c-2ff4-8435-ca46-9641e9f9ea10",
+          "description": "Notre Dame Fighting Irish",
+          "sportId": 23,
+          "teamId": 87,
+          "team": {
+            "id": 87,
+            "description": "Notre Dame Fighting Irish",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/87/notre-dame-fighting-irish"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/87/notre-dame-fighting-irish"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1099,
+          "type": "team",
+          "uid": "s:20~l:23~t:145",
+          "guid": "f6196074-c394-4821-7b0b-c4271d9467de",
+          "description": "Ole Miss Rebels",
+          "sportId": 23,
+          "teamId": 145,
+          "team": {
+            "id": 145,
+            "description": "Ole Miss Rebels",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/145/ole-miss-rebels"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/145/ole-miss-rebels"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1107,
+          "type": "team",
+          "uid": "s:20~l:23~t:30",
+          "guid": "63d7a1b4-ee19-f0ae-33c5-42a14e000fb8",
+          "description": "USC Trojans",
+          "sportId": 23,
+          "teamId": 30,
+          "team": {
+            "id": 30,
+            "description": "USC Trojans",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/30/usc-trojans"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/30/usc-trojans"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 1092,
+          "type": "team",
+          "uid": "s:20~l:23~t:96",
+          "guid": "d5ec1329-3c7b-93e8-6f57-982c4f33ea75",
+          "description": "Kentucky Wildcats",
+          "sportId": 23,
+          "teamId": 96,
+          "team": {
+            "id": 96,
+            "description": "Kentucky Wildcats",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/96/kentucky-wildcats"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/96/kentucky-wildcats"
+                }
+              }
+            }
+          }
+        },
+        { "type": "guid", "guid": "014788cd-231c-e33e-32c3-7e8d9a1e530f" },
+        { "type": "guid", "guid": "258022c1-fed4-a0ce-c017-1f853c81d1a8" },
+        { "type": "guid", "guid": "bd06efe1-3050-2356-37c1-4b3fef1c29be" },
+        { "type": "guid", "guid": "fe74bfd9-c15e-7b3a-ab25-ff4e5636282e" },
+        { "type": "guid", "guid": "2b3657a5-caae-31a2-899a-0d09df0f7bed" },
+        { "type": "guid", "guid": "fa181128-4809-a209-1add-d5a3b0cefd3c" },
+        { "type": "guid", "guid": "4351fef8-fe69-53b1-ea57-72684b36ec35" },
+        { "type": "guid", "guid": "013a8bab-0dd5-f6a0-45e6-1128a124f34b" },
+        { "type": "guid", "guid": "b66e959d-b64e-9bd6-7d5c-1bcb0d53c0cb" },
+        { "type": "guid", "guid": "b9a22bd6-7449-92bc-0e95-a6d8da673b3e" },
+        { "type": "guid", "guid": "6509690a-8cf2-b255-5af7-b6a1a1010ac4" },
+        { "type": "guid", "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e" },
+        { "type": "guid", "guid": "7dae6b2a-7a04-6d4d-6e35-a625805c6c0a" },
+        { "type": "guid", "guid": "116d333f-cf1a-0c67-d450-36a834af56de" },
+        { "type": "guid", "guid": "2bba3706-6f29-3e68-8b28-583a0d4a9caa" },
+        { "type": "guid", "guid": "78bdee7f-11f2-3bf9-f93e-a8e3831c2792" },
+        { "type": "guid", "guid": "ea1660a4-aeb8-b9da-7d9f-fcd70d3a0162" },
+        { "type": "guid", "guid": "6bbe4a57-263d-12b2-639a-f1db99afcac9" },
+        { "type": "guid", "guid": "ecda0f44-47cb-4ab9-a1aa-574c35ee6891" },
+        { "type": "guid", "guid": "67d60bca-1b6b-8d78-81ae-6889e883bb96" },
+        { "type": "guid", "guid": "057d08ff-5067-3b91-946b-d941c8aecde5" },
+        { "type": "guid", "guid": "4350bc91-1a0d-8292-bf66-9687147703f0" },
+        { "type": "guid", "guid": "2845c2f1-d2ef-3f34-aaa2-469687c28cec" },
+        { "type": "guid", "guid": "30776972-a2c7-1cf2-4530-1c3820f5a4ea" },
+        { "type": "guid", "guid": "e9635416-dfc2-d9d6-ff1c-3e0f70ab2d8c" },
+        { "type": "guid", "guid": "2fc3b71f-8247-22a5-f6da-df3902cbb438" },
+        { "type": "guid", "guid": "2e36fa17-1467-30cc-ab7a-6f84ea400a49" },
+        { "type": "guid", "guid": "6a581b24-2e59-a315-6f91-e85d722f4e9f" },
+        { "type": "guid", "guid": "ebc2999c-2ff4-8435-ca46-9641e9f9ea10" },
+        { "type": "guid", "guid": "f6196074-c394-4821-7b0b-c4271d9467de" },
+        { "type": "guid", "guid": "63d7a1b4-ee19-f0ae-33c5-42a14e000fb8" },
+        { "type": "guid", "guid": "d5ec1329-3c7b-93e8-6f57-982c4f33ea75" },
+        { "type": "guid", "guid": "081713e8-6afc-3055-8617-5a93c88f3e51" }
+      ],
+      "premium": false,
+      "links": {
+        "web": {
+          "href": "https://www.espn.com/college-football/story/_/id/45074124/college-football-2025-newcomers-recruits-portal-players"
+        },
+        "mobile": { "href": "http://m.espn.go.com/ncf/story?storyId=45074124" },
+        "api": {
+          "self": {
+            "href": "https://content.core.api.espn.com/v1/sports/news/45074124"
+          }
+        },
+        "app": {
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showStory?uid=45074124"
+          }
+        }
+      },
+      "byline": "Craig Haubert and Billy Tucker"
+    },
+    {
+      "id": 45094497,
+      "nowId": "1-45094497",
+      "contentKey": "45094497-1-5-1",
+      "dataSourceIdentifier": "ad81dc530605c",
+      "type": "HeadlineNews",
+      "headline": "Miami LB Adarius Hayes injured in crash that killed 3 people",
+      "description": "Miami linebacker Adarius Hayes was one of the drivers in a two-vehicle crash that left three people dead and injured Hayes and one other person, police said Sunday.",
+      "lastModified": "2025-05-12T00:33:19Z",
+      "published": "2025-05-11T11:55:00Z",
+      "images": [
+        {
+          "dataSourceIdentifier": "6c4ec346f0ce6",
+          "id": 45094450,
+          "type": "header",
+          "name": "240907 Adarius Hayes photo [1296x729]",
+          "credit": "Samuel Lewis/Icon Sportswire",
+          "height": 729,
+          "width": 1296,
+          "url": "https://a.espncdn.com/photo/2025/0511/r1491000_1296x729_16-9.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "id": 409224,
+          "type": "topic",
+          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+          "description": "news",
+          "sportId": 0,
+          "topicId": 781
+        },
+        {
+          "id": 1119,
+          "type": "team",
+          "uid": "s:20~l:23~t:2390",
+          "guid": "2b3657a5-caae-31a2-899a-0d09df0f7bed",
+          "description": "Miami Hurricanes",
+          "sportId": 23,
+          "teamId": 2390,
+          "team": {
+            "id": 2390,
+            "description": "Miami Hurricanes",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2390/miami-hurricanes"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2390/miami-hurricanes"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": 9571,
+          "type": "league",
+          "uid": "s:20~l:23",
+          "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+          "description": "NCAA Football",
+          "sportId": 23,
+          "leagueId": 23,
+          "league": {
+            "id": 23,
+            "description": "NCAA Football",
+            "abbreviation": "NCAAF",
+            "links": {
+              "web": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              },
+              "mobile": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              }
+            }
+          }
+        },
+        {
+          "id": 671620,
+          "type": "athlete",
+          "uid": "s:20~l:23~a:5079440",
+          "guid": "9e318f86-30d6-3e1f-9552-63ca25e1ab49",
+          "description": "Adarius Hayes",
+          "sportId": 23,
+          "athleteId": 5079440,
+          "athlete": {
+            "id": 5079440,
+            "description": "Adarius Hayes",
+            "links": {
+              "web": {
+                "athletes": {
+                  "href": "https://www.espn.com/college-football/player/_/id/5079440/adarius-hayes"
+                }
+              },
+              "mobile": {
+                "athletes": {
+                  "href": "https://www.espn.com/college-football/player/_/id/5079440/adarius-hayes"
+                }
+              }
+            }
+          }
+        },
+        { "type": "guid", "guid": "52313677-19f8-b106-ec91-d8d17e6087fe" },
+        { "type": "guid", "guid": "2e36fa17-1467-30cc-ab7a-6f84ea400a49" },
+        { "type": "guid", "guid": "2b3657a5-caae-31a2-899a-0d09df0f7bed" },
+        { "type": "guid", "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e" },
+        { "type": "guid", "guid": "9e318f86-30d6-3e1f-9552-63ca25e1ab49" }
+      ],
+      "premium": false,
+      "links": {
+        "web": {
+          "href": "https://www.espn.com/college-football/story/_/id/45094497/miami-lb-adarius-hayes-injured-crash-killed-2-children"
+        },
+        "mobile": { "href": "http://m.espn.go.com/ncf/story?storyId=45094497" },
+        "api": {
+          "self": {
+            "href": "https://content.core.api.espn.com/v1/sports/news/45094497"
+          }
+        },
+        "app": {
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showStory?uid=45094497"
+          }
+        }
+      },
+      "byline": "Mark Schlabach"
+    },
+    {
+      "id": 45089404,
+      "nowId": "1-45089404",
+      "contentKey": "45089404-1-5-1",
+      "dataSourceIdentifier": "59aabca29f9e5",
+      "type": "HeadlineNews",
+      "headline": "Oregon lands five-star DE Richard Wesley for 2026 class",
+      "description": "Five-star defensive end Richard Wesley, the No. 18 overall prospect in the 2026 ESPN 300, announced his commitment to Oregon on Saturday night.",
+      "lastModified": "2025-05-11T02:45:29Z",
+      "published": "2025-05-11T02:09:00Z",
+      "images": [
+        {
+          "dataSourceIdentifier": "af92e9dfb595e",
+          "id": 29411915,
+          "type": "header",
+          "name": "Oregon Ducks helmet [600x400] - Copy",
+          "alt": "Oregon Ducks helmet",
+          "credit": "Brian Murphy/Icon Sportswire",
+          "height": 400,
+          "width": 600,
+          "url": "https://a.espncdn.com/photo/2017/0122/r173428_600x400_3-2.jpg"
+        }
+      ],
+      "categories": [
+        {
+          "id": 409224,
+          "type": "topic",
+          "guid": "52313677-19f8-b106-ec91-d8d17e6087fe",
+          "description": "news",
+          "sportId": 0,
+          "topicId": 781
+        },
+        {
+          "id": 9571,
+          "type": "league",
+          "uid": "s:20~l:23",
+          "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+          "description": "NCAA Football",
+          "sportId": 23,
+          "leagueId": 23,
+          "league": {
+            "id": 23,
+            "description": "NCAA Football",
+            "abbreviation": "NCAAF",
+            "links": {
+              "web": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              },
+              "mobile": {
+                "leagues": { "href": "https://www.espn.com/college-football/" }
+              }
+            }
+          }
+        },
+        {
+          "id": 33309,
+          "type": "league",
+          "guid": "ecda0f44-47cb-4ab9-a1aa-574c35ee6891",
+          "description": "Football Recruiting",
+          "sportId": 0,
+          "leagueId": 3540,
+          "league": {
+            "id": 3540,
+            "description": "Football Recruiting",
+            "links": { "web": {}, "mobile": {} }
+          }
+        },
+        {
+          "id": 703809,
+          "type": "contributor",
+          "guid": "be9825bd-e9ef-307f-be9b-f49915bee655",
+          "description": "Eli Lederman",
+          "slug": "eli-lederman",
+          "contributor": {
+            "id": 4047,
+            "description": "Eli Lederman",
+            "links": { "web": {}, "mobile": {} }
+          }
+        },
+        {
+          "id": 1111,
+          "type": "team",
+          "uid": "s:20~l:23~t:2483",
+          "guid": "116d333f-cf1a-0c67-d450-36a834af56de",
+          "description": "Oregon Ducks",
+          "sportId": 23,
+          "teamId": 2483,
+          "team": {
+            "id": 2483,
+            "description": "Oregon Ducks",
+            "links": {
+              "web": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2483/oregon-ducks"
+                }
+              },
+              "mobile": {
+                "teams": {
+                  "href": "https://www.espn.com/college-football/team/_/id/2483/oregon-ducks"
+                }
+              }
+            }
+          }
+        },
+        { "type": "guid", "guid": "52313677-19f8-b106-ec91-d8d17e6087fe" },
+        { "type": "guid", "guid": "2bba3706-6f29-3e68-8b28-583a0d4a9caa" },
+        { "type": "guid", "guid": "0f8e3d42-fa27-3f60-9e8d-276e4892f50e" },
+        { "type": "guid", "guid": "ecda0f44-47cb-4ab9-a1aa-574c35ee6891" },
+        { "type": "guid", "guid": "be9825bd-e9ef-307f-be9b-f49915bee655" },
+        { "type": "guid", "guid": "116d333f-cf1a-0c67-d450-36a834af56de" }
+      ],
+      "premium": false,
+      "links": {
+        "web": {
+          "href": "https://www.espn.com/college-football/story/_/id/45089404/oregon-lands-five-star-de-richard-wesley-2026-class"
+        },
+        "mobile": { "href": "http://m.espn.go.com/ncf/story?storyId=45089404" },
+        "api": {
+          "self": {
+            "href": "https://content.core.api.espn.com/v1/sports/news/45089404"
+          }
+        },
+        "app": {
+          "sportscenter": {
+            "href": "sportscenter://x-callback-url/showStory?uid=45089404"
+          }
+        }
+      },
+      "byline": "Eli Lederman"
+    }
+  ]
+}

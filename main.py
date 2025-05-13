@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request, Depends
 from mcp.server.sse import SseServerTransport
 from starlette.routing import Mount
-from weather import mcp
+from sports import mcp
 from api_key_auth import ensure_valid_api_key
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
