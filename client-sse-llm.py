@@ -3,7 +3,7 @@ from mcp import ClientSession
 from mcp.client.sse import sse_client
 from typing import List, Optional
 from contextlib import AsyncExitStack
-from openai import AsyncOpenAI, RateLimitError
+from openai import AsyncOpenAI
 import json
 
 
@@ -16,7 +16,6 @@ openai_client = AsyncOpenAI()
 # Global session handle
 session: Optional[ClientSession] = None
 
-
 async def connect_to_server(url: str, headers: dict) -> None:
     """
     Establish and retain a global MCP ClientSession over SSE using AsyncExitStack.
@@ -27,7 +26,6 @@ async def connect_to_server(url: str, headers: dict) -> None:
     """
     global session
 
-    # print(f"Headers:  {headers}")
     # Enter the SSE client context (opens the read/write streams)
     read_stream, write_stream = await exit_stack.enter_async_context(
         sse_client(url, headers=headers)
@@ -42,11 +40,10 @@ async def connect_to_server(url: str, headers: dict) -> None:
     await session.initialize()
 
     # (Optional) List tools on connect
-    # tools_result = await session.list_tools()
-    # print("\nConnected to server with tools:")
-    # for tool in tools_result.tools:
+    #tools_result = await session.list_tools()
+    #print("\nConnected to server with tools:")
+    #for tool in tools_result.tools:
     #    print(f"  - {tool.name}: {tool.description}")
-
 
 async def get_mcp_tools() -> List[str]:
     """
@@ -56,21 +53,21 @@ async def get_mcp_tools() -> List[str]:
         RuntimeError: if not connected yet.
     """
     if session is None:
-        raise RuntimeError(
-            "MCP session is not initialized—call connect_to_server() first."
-        )
+        raise RuntimeError("MCP session is not initialized—call connect_to_server() first.")
+    
 
     tools_result = await session.list_tools()
-    return [      
-        {  
-            "type": "function",  
-            "name": tool.name,  
-            "description": tool.description,  
-            "parameters": tool.inputSchema,  
+    return [
+        {
+            "type": "function",
+            "function": {
+                "name": tool.name,
+                "description": tool.description,
+                "parameters": tool.inputSchema,
+            },
         }
         for tool in tools_result.tools
     ]
-
 
 async def shutdown_server() -> None:
     """
@@ -79,7 +76,7 @@ async def shutdown_server() -> None:
     global session
     await exit_stack.aclose()
     session = None
-
+    
 
 async def process_query(query: str) -> None:
     """
@@ -91,11 +88,11 @@ async def process_query(query: str) -> None:
     for name in tools:
         print(f"  - {name}")
     print()
-
+    
     # Initial OpenAI API call
-    response = await openai_client.responses.create(
+    response = await openai_client.chat.completions.create(
         model="gpt-4o",
-        input=[{"role": "user", "content": query}],
+        messages=[{"role": "user", "content": query}],
         tools=tools,
         tool_choice="auto",
     )
@@ -103,68 +100,62 @@ async def process_query(query: str) -> None:
     print(response)
 
     # Get assistant's response
-    assistant_message = response.model_dump_json()
+    assistant_message = response.choices[0].message
     
-    print(json.loads(assistant_message)["output"])
-
+    
+    
     # Initialize conversation with user query and assistant response
     messages = [
         {"role": "user", "content": query},
-        json.loads(assistant_message)["output"]
-     ]
-    
-   
-    
-        
-            # To provide output to tools, add a response for each tool call to an array passed  
-            # to the next response as `input`  
-    if response.output:
-            for output in response.output:  
-                    if output.type == "function_call":  
-                        # Execute tool call
-                        print(f"AI decided that you need tool:  {output.name}")
-                        result = await session.call_tool(
-                            output.name,
-                            arguments=json.loads(output.arguments),
-                        )
-            #print(f"#############  {result.content[0].text}")
+        assistant_message,
+    ]
+
+    # Handle tool calls if present
+    if assistant_message.tool_calls:
+        # Process each tool call
+        for tool_call in assistant_message.tool_calls:
+            # Execute tool call
+            print(f"AI decided that you need tool:  {tool_call.function.name}")
+            result = await session.call_tool(
+                tool_call.function.name,
+                arguments=json.loads(tool_call.function.arguments),
+            )
+
             # Add tool response to conversation
             messages.append(
                 {
-                    "type": "function_call_output",
-                    "call_id": output.call_id,
-                    "output": result.content[0].text,
+                    "role": "tool",
+                    "tool_call_id": tool_call.id,
+                    "content": result.content[0].text,
                 }
             )
             
-            print(messages)
+        print(messages)
 
-            final_response = await openai_client.responses.create(
-                model="gpt-4o",
-                input=messages,
-                tools=tools,
-                tool_choice="none",  # Don't allow more tool calls
-            )
+        # Get final response from OpenAI with tool results
+        final_response = await openai_client.chat.completions.create(
+            model="gpt-4o",
+            messages=messages,
+            tools=tools,
+            tool_choice="none",  # Don't allow more tool calls
+        )
 
-            #print(f"Messages Sent:  {messages}")
-            print(f"Final Output:  {final_response.output_text}")
-            return final_response.output_text
+        print(f"Final Output:  {final_response.choices[0].message.content}")
+        return final_response.choices[0].message.content
 
     # No tool calls, just return the direct response
     print(f"AI decided that you DO NOT need tools")
-    return assistant_message
-
-
+    return assistant_message.content
+         
 async def main():
     """Main entry point for the client."""
-
-    # url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
-    url = "http://localhost:8000/sse"
+    
+    url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
+    #url="http://localhost:8000/sse"
 
     headers = {
         "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"
     }  # api key this is to connect to the mcp server
-
     # 1) Connect once
     await connect_to_server(url, headers)
 
