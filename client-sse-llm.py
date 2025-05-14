@@ -3,7 +3,7 @@ from mcp import ClientSession
 from mcp.client.sse import sse_client
 from typing import List, Optional
 from contextlib import AsyncExitStack
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI, RateLimitError
 import json
 
 
@@ -58,14 +58,12 @@ async def get_mcp_tools() -> List[str]:
 
     tools_result = await session.list_tools()
     return [
-        {
-            "type": "function",
-            "function": {
-                "name": tool.name,
-                "description": tool.description,
-                "parameters": tool.inputSchema,
-            },
-        }
+        {  
+            "type": "function",  
+            "name": tool.name,  
+            "description": tool.description,  
+            "parameters": tool.inputSchema,  
+        }  
         for tool in tools_result.tools
     ]
 
@@ -84,69 +82,55 @@ async def process_query(query: str) -> None:
     """
     print(f"\nProcessing query: {query!r}")
     tools = await get_mcp_tools()
-    print("Available tools:")
-    for name in tools:
-        print(f"  - {name}")
-    print()
+    #print("Available tools:")
+    #for name in tools:
+    #    print(f"  - {name}")
+    #print()
     
-    # Initial OpenAI API call
-    response = await openai_client.chat.completions.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": query}],
-        tools=tools,
-        tool_choice="auto",
-    )
-    
-    print(response)
-
-    # Get assistant's response
-    assistant_message = response.choices[0].message
-    
-    
-    
-    # Initialize conversation with user query and assistant response
-    messages = [
-        {"role": "user", "content": query},
-        assistant_message,
-    ]
-
-    # Handle tool calls if present
-    if assistant_message.tool_calls:
-        # Process each tool call
-        for tool_call in assistant_message.tool_calls:
-            # Execute tool call
-            print(f"AI decided that you need tool:  {tool_call.function.name}")
-            result = await session.call_tool(
-                tool_call.function.name,
-                arguments=json.loads(tool_call.function.arguments),
-            )
-
-            # Add tool response to conversation
-            messages.append(
-                {
-                    "role": "tool",
-                    "tool_call_id": tool_call.id,
-                    "content": result.content[0].text,
-                }
-            )
-            
-        print(messages)
-
-        # Get final response from OpenAI with tool results
-        final_response = await openai_client.chat.completions.create(
+    # 1️⃣ First call – let the model decide on tools
+    response = await openai_client.responses.create(
             model="gpt-4o",
-            messages=messages,
+            input=[{"role": "user", "content": query}],
             tools=tools,
-            tool_choice="none",  # Don't allow more tool calls
+            tool_choice="auto",
         )
 
-        print(f"Final Output:  {final_response.choices[0].message.content}")
-        return final_response.choices[0].message.content
+    #print(f"RESPONSE:  {response}")
+    
+    conversation = [{"role": "user", "content": query}] + response.output
+    tool_calls = [e for e in response.output if e.type == "function_call"]
+    
+    #print(f"TOOL CALLS:  {tool_calls}")
+    
+    # If there are no tool calls we’re done – pull out the text and return
+    if not tool_calls:
+        print(f"AI decided that you DO NOT need tools")
+        return response.output_text or ""
+    
+    # Execute every tool call from that first turn
+    for tc in tool_calls:
+        # Execute tool call
+        print(f"AI decided that you need tool:  {tc.name}")
+        result = await session.call_tool(tc.name, arguments=json.loads(tc.arguments))
+        conversation.append({
+            "type": "function_call_output",
+            "call_id": tc.call_id,
+            "output": result.content[0].text,
+        })
 
-    # No tool calls, just return the direct response
-    print(f"AI decided that you DO NOT need tools")
-    return assistant_message.content
-         
+    # ===== 3. Ask for the final answer (no more tools allowed) =====
+    final_resp = await openai_client.responses.create(
+            model="gpt-4.1-mini",
+            input=conversation,
+            tools=tools,
+            tool_choice="none",    # explicitly disallow further tool calls
+            store=False,
+        )
+
+    print(f"Final Output:  {final_resp.output_text}")
+    return final_resp.output_text
+
+
 async def main():
     """Main entry point for the client."""
     

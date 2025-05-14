@@ -32,6 +32,14 @@ def format_alert(news: dict) -> str:
         Link: {news.get("links", {}).get("web", "No link available").get("href", "No link available")}
         """
 
+# Define prompts
+@mcp.prompt()
+def news() -> str:
+    """Global instructions for News"""
+    with open("prompts/news.md", "r") as file:
+        template = file.read()
+    return template
+
 @mcp.tool()
 async def get_cfb_news() -> str:
     """Get news articles for college (NCAA) football.
@@ -64,6 +72,53 @@ async def get_nfl_news() -> str:
     news = [format_alert(article) for article in data.get("articles", [])]
     return "\n---\n".join(news)
 
+@mcp.tool()
+async def get_mlb_news() -> str:
+    """Get news articles for Baseball (MLB).
+
+    Args:
+        NONE
+    """
+    url = f"{ESPN_API_BASE}/apis/site/v2/sports/baseball/mlb/news"
+    data = await make_espn_request(url)
+    
+    if not data or data.get("articles", []) is None:
+        return "Unable to fetch articles or no articles found."
+
+    news = [format_alert(article) for article in data.get("articles", [])]
+    return "\n---\n".join(news)
+
+@mcp.tool()
+async def get_nhl_news() -> str:
+    """Get news articles for Hockey (NHL).
+
+    Args:
+        NONE
+    """
+    url = f"{ESPN_API_BASE}/apis/site/v2/sports/hockey/nhl/news"
+    data = await make_espn_request(url)
+    
+    if not data or data.get("articles", []) is None:
+        return "Unable to fetch articles or no articles found."
+
+    news = [format_alert(article) for article in data.get("articles", [])]
+    return "\n---\n".join(news)
+
+@mcp.tool()
+async def get_nba_news() -> str:
+    """Get news articles for Basketball (NBA).
+
+    Args:
+        NONE
+    """
+    url = f"{ESPN_API_BASE}/apis/site/v2/sports/basketball/nba/news"
+    data = await make_espn_request(url)
+    
+    if not data or data.get("articles", []) is None:
+        return "Unable to fetch articles or no articles found."
+
+    news = [format_alert(article) for article in data.get("articles", [])]
+    return "\n---\n".join(news)
 
 if __name__ == "__main__":
     # Initialize and run the server
