@@ -9,7 +9,7 @@ This repository contains both a client and server to demonstrate how to use an M
 - **Server**  
   - Exposes several tools that call ESPN APIs to fetch the latest news for NFL, NBA, College Football, NHL, and MLB.  
   - Hosts an `@mcp.prompt` template (a Markdown file in `prompts/`) which the client can retrieve and use as instructions for the final output.  
-  - Built with the Anthropic Python SDK and FastMCP, wrapped in a FastAPI app that serves SSE (Server-Sent Events).  
+  - Built using Anthropic Python SDK and FastMCP, wrapped in a FastAPI app that serves SSE (Server-Sent Events).  
   - Deploys via `main.py` as an Azure Container App.
 
 - **Client**  
@@ -26,6 +26,7 @@ This repository contains both a client and server to demonstrate how to use an M
 3. **Prompt templating** with an editable Markdown prompt  
 4. **SSE transport** between client and server  
 5. **Protected endpoints** via a simple API key scheme  
+5. **Responses API** using the Reaponses API to call LLM  
 
 ---
 
@@ -38,24 +39,100 @@ This repository contains both a client and server to demonstrate how to use an M
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 1. Clone the repo
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/joelborellis/MCP-server-fastapi-containerapp
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   cd MCP-server-fastapi-containerapp
+   uv sync
+   ```
+
+   This will install the Python packages specified in `pyproject.toml`.
+
+3. **Local testing**
+
+   * Start the FastAPI (uvicorn) server locally:
+
+     ```bash
+     uv run fastapi dev main.py
+     ```
+   * Edit the `client-sse-llm.py` file and ensure the URL points to:
+
+     ```text
+     http://localhost:8000/sse
+     ```
+   * Run the client script:
+
+     ```bash
+     python client-sse-llm.py
+     ```
+
+## ☁️ Deploying as an Azure Container App
+
+The easiest way to deploy to Azure is by using the Azure CLI command `az containerapp up`.
+See: [Get started with Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/get-started?tabs=bash)
+
+### Option 1: Deploy from local code
 
 ```bash
-git clone https://github.com/joelborellis/MCP-server-fastapi-containerapp.git
-cd MCP-server-fastapi-containerapp
+az containerapp up \
+  -g <YOUR_RESOURCE_GROUP> \
+  -n <APP_NAME> \
+  --environment <ENV_NAME> \
+  -l <REGION> \
+  --env-vars API_KEYS=<YOUR_API_KEY> \
+  --source .
+```
+
+### Option 2: Deploy from a container registry
+
+1. Build a Docker image using the included `Dockerfile` and push it to your container registry.
+2. Deploy:
+
+   ```bash
+   az containerapp up \
+     -g <YOUR_RESOURCE_GROUP> \
+     -n <APP_NAME> \
+     --environment <ENV_NAME> \
+     -l <REGION> \
+     --env-vars API_KEYS=<YOUR_API_KEY> \
+     --image <YOUR_REGISTRY>/<IMAGE_NAME>:<TAG>
+   ```
+
+> **Note:** After deployment, you may need to enable external ingress:
+>
+> ```bash
+> az containerapp ingress enable \
+>   -n <APP_NAME> \
+>   -g <YOUR_RESOURCE_GROUP> \
+>   --type external \
+>   --target-port 8000 \
+>   --transport auto
+> ```
+
+## 🎯 Usage Examples
+
+- show me all the sports news
+- show me all the latest news for the NFL
+
 
 # Sports News MCP Server
 
-A minimal FastMCP (Message-Centric Protocol) server that fetches the latest sports news from ESPN and exposes them as callable tools. Built with FastAPI, `httpx` for async HTTP requests, and the Anthropic Python SDK’s MCP support.
+A minimal FastMCP (Model Context Protocol) server that fetches the latest sports news from ESPN and exposes them as callable tools. Built with FastAPI, `httpx` for async HTTP requests, and the Anthropic Python SDK’s MCP support.
 
 ---
 
 ## 📋 Contents
 
 - [`sports.py`](#sportspy) – The main MCP server implementation  
-- [`prompts/news.md`](#prompt-template) – Markdown template for how news should be presented  
+- [`prompts/news.md`](#prompt-template) – Markdown template that can be used as instructions to the LLM for final response  
 
 ---
 
@@ -79,7 +156,7 @@ A minimal FastMCP (Message-Centric Protocol) server that fetches the latest spor
 
 # FastMCP SSE Server (`main.py`)
 
-A FastAPI-based container application that exposes an MCP (Message-Centric Protocol) server over Server-Sent Events (SSE), wrapping the `sports` MCP instance behind API-key authentication and CORS middleware.
+A FastAPI-based container application that exposes an MCP (Model Context Protocol) server over Server-Sent Events (SSE), wrapping the `sports` MCP instance behind API-key authentication and CORS middleware.
 
 ---
 
