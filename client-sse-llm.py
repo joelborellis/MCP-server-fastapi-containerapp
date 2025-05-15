@@ -3,7 +3,7 @@ from mcp import ClientSession
 from mcp.client.sse import sse_client
 from typing import List, Optional
 from contextlib import AsyncExitStack
-from openai import AsyncOpenAI, RateLimitError
+from openai import AsyncOpenAI
 import json
 
 
@@ -86,7 +86,7 @@ async def process_query(query: str) -> None:
     #for name in tools:
     #    print(f"  - {name}")
     #print()
-    
+
     # 1️⃣ First call – let the model decide on tools
     response = await openai_client.responses.create(
             model="gpt-4o",
@@ -95,16 +95,16 @@ async def process_query(query: str) -> None:
             tool_choice="auto",
         )
 
-    #print(f"RESPONSE:  {response}")
+    print(response.output)
+    print(f"Output text:  {response.output_text}")
     
     conversation = [{"role": "user", "content": query}] + response.output
     tool_calls = [e for e in response.output if e.type == "function_call"]
     
-    #print(f"TOOL CALLS:  {tool_calls}")
-    
     # If there are no tool calls we’re done – pull out the text and return
     if not tool_calls:
-        print(f"AI decided that you DO NOT need tools")
+        #print(f"AI decided that you DO NOT need tools")
+        print(response.output_text)
         return response.output_text or ""
     
     # Execute every tool call from that first turn
@@ -118,11 +118,15 @@ async def process_query(query: str) -> None:
             "output": result.content[0].text,
         })
 
+
+    prompt = await session.get_prompt("news", arguments={})
+    instructions = prompt.messages[0].content.text
+    
     # ===== 3. Ask for the final answer (no more tools allowed) =====
     final_resp = await openai_client.responses.create(
+            instructions=instructions,
             model="gpt-4.1-mini",
             input=conversation,
-            tools=tools,
             tool_choice="none",    # explicitly disallow further tool calls
             store=False,
         )
@@ -134,8 +138,8 @@ async def process_query(query: str) -> None:
 async def main():
     """Main entry point for the client."""
     
-    url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
-    #url="http://localhost:8000/sse"
+    #url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
+    url="http://localhost:8000/sse"
 
     headers = {
         "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"

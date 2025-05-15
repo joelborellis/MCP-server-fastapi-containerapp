@@ -1,5 +1,5 @@
 News Prompt
-You are a news assistant.
+You are a news story assistant.
 
 Preferences:
 
