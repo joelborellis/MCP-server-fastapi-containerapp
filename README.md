@@ -35,7 +35,7 @@ Model Context protocol Github:  https://github.com/modelcontextprotocol
 
 - Python 3.9+  
 - [uv](https://pypi.org/project/uv/) (for task management)  
-- An OpenAI API key  
+- An AzureOpenAI API key  
 - Azure CLI (for container app deployment)
 
 ---
@@ -126,7 +126,7 @@ az containerapp up \
 
 # Sports News MCP Server
 
-A minimal FastMCP (Model Context Protocol) server that fetches the latest sports news from ESPN and exposes them as callable tools. Built with FastAPI, `httpx` for async HTTP requests, and the Anthropic Python SDK’s MCP support.
+A minimal FastMCP (Model Context Protocol) server that fetches the latest sports news from ESPN and exposes them as callable tools. Built with FastAPI, `httpx` for async HTTP requests, and the Official Python SDK’s MCP support.
 
 ---
 
@@ -195,7 +195,7 @@ A FastAPI-based container application that exposes an MCP (Model Context Protoco
 
 # SSE LLM Client (`client-sse-llm.py`)
 
-An asynchronous Python client that connects to an MCP (Message-Centric Protocol) server over Server-Sent Events (SSE), lets GPT-4o decide which tools to call, executes those tools on the server, and then asks GPT-4.1 for a final answer using a retrieved prompt template.
+An asynchronous Python client that connects to an MCP (Model Context Protocol) server over Server-Sent Events (SSE), lets GPT-4o decide which tools to call, executes those tools on the server, and then asks GPT-4.1 for a final answer using a retrieved prompt template.
 
 ---
 
@@ -203,7 +203,7 @@ An asynchronous Python client that connects to an MCP (Message-Centric Protocol)
 
 - [`client-sse-llm.py`](#client-sse-llmpy) — Main client script  
 - MCP server required (e.g. `sports.py` + FastAPI wrapper)  
-- Valid API key for SSE handshake  
+- Valid API key for SSE handshake (this is just for demo purposes to show some security when accessing the Container App)
 
 ---
 
@@ -218,8 +218,9 @@ An asynchronous Python client that connects to an MCP (Message-Centric Protocol)
 
 3. **Two-step LLM interaction**  
    1. **Tool-selection call**:  
-      - Sends user query to `openai.responses.create(model="gpt-4o", …, tools=…)`.  
-      - GPT-4o may return zero or more `function_call` events.  
+      - Sends user query to `openai.responses.create(model="gpt-4.1-mini", …, tools=…)`.  
+      - gpt-4.1-mini may return zero or more `function_call` events.
+      - If no tool calls the response is printed to screen
    2. **Tool execution**:  
       - For each `function_call`, invokes `session.call_tool(name, args)` on the MCP server.  
       - Appends tool outputs to the conversation.  
