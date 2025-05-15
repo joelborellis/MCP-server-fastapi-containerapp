@@ -1,6 +1,7 @@
 # MCP Client/Server Demo with OpenAI Models
 
-This repository contains both a client and server to demonstrate how to use an MCP (Model Context Protocol) client/server setup with OpenAI models.
+This repository contains both a client and server to demonstrate how to use an MCP (Model Context Protocol) client/server setup with OpenAI models.  
+Model Context protocol Github:  https://github.com/modelcontextprotocol 
 
 ---
 
@@ -9,11 +10,11 @@ This repository contains both a client and server to demonstrate how to use an M
 - **Server**  
   - Exposes several tools that call ESPN APIs to fetch the latest news for NFL, NBA, College Football, NHL, and MLB.  
   - Hosts an `@mcp.prompt` template (a Markdown file in `prompts/`) which the client can retrieve and use as instructions for the final output.  
-  - Built using Anthropic Python SDK and FastMCP, wrapped in a FastAPI app that serves SSE (Server-Sent Events).  
+  - Built using FastMCP (https://github.com/modelcontextprotocol/python-sdk/tree/main/examples/fastmcp), wrapped in a FastAPI app that serves SSE (Server-Sent Events).  
   - Deploys via `main.py` as an Azure Container App.
 
 - **Client**  
-  - Uses the Anthropic SDK’s `sse_client` to connect to the server.  
+  - Uses the  `sse_client` from `sse.client.mcp` Python SDK to connect to the server.  
   - Can list available resources, fetch prompts, and invoke tools over SSE.
   - Is a basic chatbot that calls the MCP server tools based on the determination of tool use by an LLM
 
