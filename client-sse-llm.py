@@ -3,15 +3,23 @@ from mcp import ClientSession
 from mcp.client.sse import sse_client
 from typing import List, Optional
 from contextlib import AsyncExitStack
-from openai import AsyncOpenAI
+from openai import AsyncAzureOpenAI
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Azure OpenAI variables from .env file
+AZURE_OPENAI_KEY = os.environ.get("AZURE_OPENAI_KEY")
+AZURE_ENDPOINT = os.environ.get("AZURE_ENDPOINT")
 
 
 # A single stack to hold all our async contexts
 exit_stack: AsyncExitStack = AsyncExitStack()
 
 # setup the OpenAI Client
-openai_client = AsyncOpenAI()
+openai_client = AsyncAzureOpenAI(azure_endpoint=AZURE_ENDPOINT, api_key=AZURE_OPENAI_KEY, api_version="2025-03-01-preview")  # api_version must be 2025-03-01-preview or later to use responses API
 
 # Global session handle
 session: Optional[ClientSession] = None
@@ -89,7 +97,7 @@ async def process_query(query: str) -> None:
 
     # 1️⃣ First call – let the model decide on tools
     response = await openai_client.responses.create(
-            model="gpt-4o",
+            model="gpt-4.1-mini",
             input=[{"role": "user", "content": query}],
             tools=tools,
             tool_choice="auto",
@@ -110,7 +118,7 @@ async def process_query(query: str) -> None:
     # Execute every tool call from that first turn
     for tc in tool_calls:
         # Execute tool call
-        print(f"AI decided that you need tool:  {tc.name}")
+        print(f"AI decided that you need tool:  {tc.name} with args: {tc.arguments}")
         result = await session.call_tool(tc.name, arguments=json.loads(tc.arguments))
         conversation.append({
             "type": "function_call_output",
@@ -138,8 +146,8 @@ async def process_query(query: str) -> None:
 async def main():
     """Main entry point for the client."""
     
-    #url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
-    url="http://localhost:8000/sse"
+    url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
+    #url="http://localhost:8000/sse"
 
     headers = {
         "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"

@@ -1,6 +1,5 @@
 # keys files
 .env
-NOTES.txt
 
 # Python-generated files
 __pycache__/
@@ -12,3 +11,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Other files
+sample.json
+NOTES.txt

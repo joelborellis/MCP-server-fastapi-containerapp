@@ -1,6 +1,7 @@
 from typing import Any
 import httpx
 from mcp.server.fastmcp import FastMCP
+import json
 
 # Initialize FastMCP server
 mcp = FastMCP("sports")
@@ -103,6 +104,23 @@ async def get_nhl_news() -> str:
 
     news = [format_alert(article) for article in data.get("articles", [])]
     return "\n---\n".join(news)
+
+@mcp.tool()
+async def get_nhl_team_info(team: str) -> str:
+    """Get information about a specific NHL team.
+
+    Args:
+        team - The NHL team name to get information about.
+    """
+    url = f"{ESPN_API_BASE}/apis/site/v2/sports/hockey/nhl/teams/toronto"
+    data = await make_espn_request(url)
+    
+    if not data or data.get("team", []) is None:
+        return "Unable to fetch articles or no articles found."
+
+    info = json.dumps(data.get("team", []), indent=4)
+    print(f"Team info:  {info}")
+    return "\n---\n".join(info)
 
 @mcp.tool()
 async def get_nba_news() -> str:
