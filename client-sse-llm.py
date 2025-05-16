@@ -47,11 +47,6 @@ async def connect_to_server(url: str, headers: dict) -> None:
     # Perform the handshake
     await session.initialize()
 
-    # (Optional) List tools on connect
-    #tools_result = await session.list_tools()
-    #print("\nConnected to server with tools:")
-    #for tool in tools_result.tools:
-    #    print(f"  - {tool.name}: {tool.description}")
 
 async def get_mcp_tools() -> List[str]:
     """
