@@ -15,4 +15,7 @@ dependencies = [
     "uvicorn[standard]",
     "requests",
     "openai-agents",
+    "azure-ai-projects==1.0.0b7",
+    "azure-identity==1.21.0",
+    "aiohttp",
 ]

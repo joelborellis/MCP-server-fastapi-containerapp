@@ -1,23 +1,22 @@
 import asyncio
+import os
 
-from agents import Agent, Runner, gen_trace_id, trace
+from agents import Agent, Runner, gen_trace_id, trace, OpenAIChatCompletionsModel
+from openai import AsyncAzureOpenAI
 from agents.mcp import MCPServer, MCPServerSse
 from agents.model_settings import ModelSettings
 
-
 async def run(mcp_server: MCPServer):
+    
+    azure_openai_client = await get_azure_openai_client()
+    
     agent = Agent(
         name="Assistant",
         instructions="Use the tools to answer the questions.  If there is no tool available, say 'I don't know'.",
+        model=OpenAIChatCompletionsModel(model=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"), openai_client=azure_openai_client),
         mcp_servers=[mcp_server],
         model_settings=ModelSettings(tool_choice="required"),
     )
-
-    # Use one of the sports tools, there is none for soccer so this should say it caan't find a tool
-    message = "Show news for soccer"
-    print(f"Running: {message}")
-    result = await Runner.run(starting_agent=agent, input=message)
-    print(result.final_output)
 
     # Use one of the sports tools, it sould use get_nhl_news()
     message = "Show news for NHL"
@@ -25,12 +24,14 @@ async def run(mcp_server: MCPServer):
     result = await Runner.run(starting_agent=agent, input=message)
     print(result.final_output)
 
+async def get_azure_openai_client():
+    return AsyncAzureOpenAI(api_key=os.getenv("AZURE_OPENAI_KEY"), api_version=os.getenv("AZURE_API_VERSION"), azure_endpoint=os.getenv("AZURE_ENDPOINT"))
 
 async def main():
     async with MCPServerSse(
         name="SSE Container App Server",
         params={
-            "url": "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse",
+            "url": "https://mcp-server.redground-70426cdf.eastus2.azurecontainerapps.io/sse",
             "headers": {
                 "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"
             },  # api key this is to connect to the mcp server

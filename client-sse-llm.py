@@ -92,14 +92,14 @@ async def process_query(query: str) -> None:
 
     # 1️⃣ First call – let the model decide on tools
     response = await openai_client.responses.create(
-            model="gpt-4.1-mini",
+            model="gpt-4o-mini",
             input=[{"role": "user", "content": query}],
             tools=tools,
             tool_choice="auto",
         )
 
-    print(response.output)
-    print(f"Output text:  {response.output_text}")
+    #print(response.output)
+    #print(f"Output text:  {response.output_text}")
     
     conversation = [{"role": "user", "content": query}] + response.output
     tool_calls = [e for e in response.output if e.type == "function_call"]
@@ -125,10 +125,12 @@ async def process_query(query: str) -> None:
     prompt = await session.get_prompt("news", arguments={})
     instructions = prompt.messages[0].content.text
     
+    #print(conversation)
+    
     # ===== 3. Ask for the final answer (no more tools allowed) =====
     final_resp = await openai_client.responses.create(
             instructions=instructions,
-            model="gpt-4.1-mini",
+            model="gpt-4o-mini",
             input=conversation,
             tool_choice="none",    # explicitly disallow further tool calls
             store=False,
@@ -141,7 +143,8 @@ async def process_query(query: str) -> None:
 async def main():
     """Main entry point for the client."""
     
-    url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
+    #url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
+    url = "https://mcp-server.redground-70426cdf.eastus2.azurecontainerapps.io/sse"
     #url="http://localhost:8000/sse"
 
     headers = {
