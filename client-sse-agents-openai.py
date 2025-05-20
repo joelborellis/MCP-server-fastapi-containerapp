@@ -5,6 +5,9 @@ from agents import Agent, Runner, gen_trace_id, trace, OpenAIChatCompletionsMode
 from openai import AsyncAzureOpenAI
 from agents.mcp import MCPServer, MCPServerSse
 from agents.model_settings import ModelSettings
+from dotenv import load_dotenv
+
+load_dotenv()
 
 async def run(mcp_server: MCPServer):
     
@@ -31,7 +34,7 @@ async def main():
     async with MCPServerSse(
         name="SSE Container App Server",
         params={
-            "url": "https://mcp-server.redground-70426cdf.eastus2.azurecontainerapps.io/sse",
+            "url": "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse",
             "headers": {
                 "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"
             },  # api key this is to connect to the mcp server

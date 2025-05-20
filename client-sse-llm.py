@@ -13,13 +13,14 @@ load_dotenv()
 # Azure OpenAI variables from .env file
 AZURE_OPENAI_KEY = os.environ.get("AZURE_OPENAI_KEY")
 AZURE_ENDPOINT = os.environ.get("AZURE_ENDPOINT")
+AZURE_API_VERSION = os.environ.get("AZURE_API_VERSION")
 
 
 # A single stack to hold all our async contexts
 exit_stack: AsyncExitStack = AsyncExitStack()
 
 # setup the OpenAI Client
-openai_client = AsyncAzureOpenAI(azure_endpoint=AZURE_ENDPOINT, api_key=AZURE_OPENAI_KEY, api_version="2025-03-01-preview")  # api_version must be 2025-03-01-preview or later to use responses API
+openai_client = AsyncAzureOpenAI(azure_endpoint=AZURE_ENDPOINT, api_key=AZURE_OPENAI_KEY, api_version=AZURE_API_VERSION)  # api_version must be 2025-03-01-preview or later to use responses API
 
 # Global session handle
 session: Optional[ClientSession] = None
@@ -85,14 +86,10 @@ async def process_query(query: str) -> None:
     """
     print(f"\nProcessing query: {query!r}")
     tools = await get_mcp_tools()
-    #print("Available tools:")
-    #for name in tools:
-    #    print(f"  - {name}")
-    #print()
 
     # 1️⃣ First call – let the model decide on tools
     response = await openai_client.responses.create(
-            model="gpt-4o-mini",
+            model="gpt-4.1-mini",
             input=[{"role": "user", "content": query}],
             tools=tools,
             tool_choice="auto",
@@ -130,7 +127,7 @@ async def process_query(query: str) -> None:
     # ===== 3. Ask for the final answer (no more tools allowed) =====
     final_resp = await openai_client.responses.create(
             instructions=instructions,
-            model="gpt-4o-mini",
+            model="gpt-4.1-mini",
             input=conversation,
             tool_choice="none",    # explicitly disallow further tool calls
             store=False,
@@ -143,13 +140,14 @@ async def process_query(query: str) -> None:
 async def main():
     """Main entry point for the client."""
     
-    #url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse"
-    url = "https://mcp-server.redground-70426cdf.eastus2.azurecontainerapps.io/sse"
+    url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse" # Joel work subscription
+    #url = "https://mcp-server.redground-70426cdf.eastus2.azurecontainerapps.io/sse"
     #url="http://localhost:8000/sse"
 
     headers = {
         "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"
     }  # api key this is to connect to the mcp server
+    
     # 1) Connect once
     await connect_to_server(url, headers)
 
