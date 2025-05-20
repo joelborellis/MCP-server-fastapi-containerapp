@@ -57,8 +57,8 @@ async def get_agent(agent_id: str) -> Agent:
 
     # Fetch agent if not in cache
     try:
-        agent = await ai_client.agents.get_agent(agent_id=agent_id)
-        agent = await ai_client.agents.create_agent()
+        agent = await ai_client.agents.get_agent(agent_id)
+        #agent = await ai_client.agents.create_agent()
         agent_cache[agent_id] = agent
         return agent
     except Exception as e:

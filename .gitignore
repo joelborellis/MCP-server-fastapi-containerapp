@@ -1,5 +1,6 @@
 # keys files
 .env
+uv.lock
 
 # Python-generated files
 __pycache__/

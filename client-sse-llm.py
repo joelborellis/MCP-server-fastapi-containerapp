@@ -89,7 +89,7 @@ async def process_query(query: str) -> None:
 
     # 1️⃣ First call – let the model decide on tools
     response = await openai_client.responses.create(
-            model="gpt-4.1-mini",
+            model="gpt-4o-mini",
             input=[{"role": "user", "content": query}],
             tools=tools,
             tool_choice="auto",
@@ -127,7 +127,7 @@ async def process_query(query: str) -> None:
     # ===== 3. Ask for the final answer (no more tools allowed) =====
     final_resp = await openai_client.responses.create(
             instructions=instructions,
-            model="gpt-4.1-mini",
+            model="gpt-4o-mini",
             input=conversation,
             tool_choice="none",    # explicitly disallow further tool calls
             store=False,
