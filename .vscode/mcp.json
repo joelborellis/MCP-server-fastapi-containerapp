@@ -1,0 +1,10 @@
+{
+    "servers": {
+        "my-mcp-server-container-app": {
+            "url": "https://mcp-server.redground-70426cdf.eastus2.azurecontainerapps.io/sse",
+            "headers": {
+        "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"
+    }
+        }
+    }
+}

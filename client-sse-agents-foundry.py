@@ -64,7 +64,7 @@ async def get_agent(agent_id: str) -> Agent:
     except Exception as e:
         logger.error(f"Agent retrieval failed - ID: {agent_id}, Error: {str(e)}")
         raise ValueError(f"Agent not found or inaccessible: {agent_id}")
-
+    
 async def main():
     server_initialized = await initialize_client()
     status = "successfully initialized" if server_initialized else "initialization failed"
