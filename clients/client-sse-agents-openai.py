@@ -7,7 +7,10 @@ from agents.mcp import MCPServer, MCPServerSse
 from agents.model_settings import ModelSettings
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(".env")
+
+async def get_azure_openai_client():
+    return AsyncAzureOpenAI(api_key=os.getenv("AZURE_OPENAI_KEY"), api_version=os.getenv("AZURE_API_VERSION"), azure_endpoint=os.getenv("AZURE_ENDPOINT"))
 
 async def run(mcp_server: MCPServer):
     
@@ -16,7 +19,7 @@ async def run(mcp_server: MCPServer):
     agent = Agent(
         name="Assistant",
         instructions="Use the tools to answer the questions.  If there is no tool available, say 'I don't know'.",
-        model=OpenAIChatCompletionsModel(model=os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"), openai_client=azure_openai_client),
+        model=OpenAIChatCompletionsModel(model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"), openai_client=azure_openai_client),
         mcp_servers=[mcp_server],
         model_settings=ModelSettings(tool_choice="required"),
     )
@@ -27,16 +30,14 @@ async def run(mcp_server: MCPServer):
     result = await Runner.run(starting_agent=agent, input=message)
     print(result.final_output)
 
-async def get_azure_openai_client():
-    return AsyncAzureOpenAI(api_key=os.getenv("AZURE_OPENAI_KEY"), api_version=os.getenv("AZURE_API_VERSION"), azure_endpoint=os.getenv("AZURE_ENDPOINT"))
 
 async def main():
     async with MCPServerSse(
         name="SSE Container App Server",
         params={
-            "url": "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse",
+            "url": os.getenv("MCP_URL"),
             "headers": {
-                "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"
+                "x-api-key": os.getenv("MCP_API_KEYS")
             },  # api key this is to connect to the mcp server
         },
     ) as server:

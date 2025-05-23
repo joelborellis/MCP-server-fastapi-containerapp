@@ -19,6 +19,6 @@ RUN python -m venv .venv \
 ENV PATH="/.venv/bin:$PATH"
 
 # Run the application.
-CMD ["/.venv/bin/fastapi", "run", "/main.py", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["/.venv/bin/fastapi", "run", "/start_server.py", "--port", "8000", "--host", "0.0.0.0"]
 
 EXPOSE 8000
