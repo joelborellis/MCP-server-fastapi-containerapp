@@ -9,16 +9,14 @@ RUN apt-get update && apt-get install -y \
 COPY . .
 
 # Install uv and dependencies from pyproject.toml
-RUN python -m venv .venv \
-    && . .venv/bin/activate \
-    && pip install --no-cache-dir --upgrade pip \
-    && pip install uv \
-    && uv sync
+RUN pip install uv 
+RUN pip install fastapi[standard]
+RUN pip install mcp
 
-# Set the virtual environment as default for the container
-ENV PATH="/.venv/bin:$PATH"
+
 
 # Run the application.
-CMD ["/.venv/bin/fastapi", "run", "/start_server.py", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["uvicorn", "start_server:app", "--port", "8000", "--host", "0.0.0.0"]
+
 
 EXPOSE 8000

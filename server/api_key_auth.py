@@ -3,7 +3,7 @@ from fastapi.security import APIKeyHeader
 import os
 from dotenv import load_dotenv
 
-load_dotenv(".env")
+load_dotenv()
 
 api_key_header = APIKeyHeader(name="x-api-key")
 

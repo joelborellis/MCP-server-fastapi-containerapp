@@ -1,2 +1,3 @@
 uv
 fastapi[standard]
+mcp

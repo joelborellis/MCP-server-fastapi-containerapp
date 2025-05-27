@@ -11,6 +11,11 @@ This README provides instructions and details for the server-side code in the `s
 
 ## Setup
 
+
+## Running the Server
+
+
+### Deploying Locally
 1. Copy `sample.env` to `.env` and fill in your server configuration:
    ```bash
    cp sample.env .env
@@ -21,12 +26,24 @@ This README provides instructions and details for the server-side code in the `s
    pip install -r requirements.txt
    ```
 
-## Running the Server
+3. Start the server with:
+   ```bash
+   uvicorn start_server:app --host 0.0.0.0 --port 8000
+   ```
 
-Start the server with:
+
+### ☁️ Deploying as an Azure Container App
+
+The easiest way to deploy to Azure is by using the Azure CLI command `az containerapp up`.
+See: [Get started with Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/get-started?tabs=bash)
+
 ```bash
-uv run fastapi dev start_server.py
+   az login --tenant YOUR_TENANT_ID
+   sh deploy_server_aca_ssh.sh
 ```
+
+
+
 
 ## Notes
 - The server must be running before clients can connect.
