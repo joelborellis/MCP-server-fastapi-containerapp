@@ -16,6 +16,7 @@ dependencies = [
     "requests",
     "openai-agents",
     "azure-ai-projects==1.0.0b7",
+    "azure-ai-agents",
     "azure-identity==1.21.0",
     "aiohttp",
 ]
