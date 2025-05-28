@@ -5,8 +5,8 @@ from mcp.client.sse import sse_client
 
 async def main():
     
-    #url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse" # Joel work subscription
-    url = "https://mcp-server.redground-70426cdf.eastus2.azurecontainerapps.io/sse"
+    url = "https://sports-mcp.orangeocean-ab857605.eastus2.azurecontainerapps.io/sse" # Joel personal subscription
+    #url = "https://mcp-server.redground-70426cdf.eastus2.azurecontainerapps.io/sse"
     #url="http://localhost:8000/sse"
     
     
