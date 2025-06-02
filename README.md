@@ -1,20 +1,20 @@
-# MCP Server & Client on Azure
+# MCP Server & Client - Azure Samples 
 
-This repository demonstrates how to use Azure Container Apps & Azure OpenAI to build MCP (Model Context Protocol) server and client components.
+This repository showcases how to deploy an MCP (Model Context Protocol) server using Azure Container Apps. It also provides three example Agents—built with Autogen, Semantic Kernel, and the OpenAI Agent SDK—that demonstrate how to acccess the MCP server.
 
 
-## Example Server
+## Example MCP Server
 
 Implements an SSE-based MCP server that exposes sports news tools (e.g., get latest NFL news) to clients. The server supports API key authentication and can be extended with additional tools or data sources. This server is implemented using fastmcp package and can be deployed locally or using Azure Container Apps. 
 
 
 See [`server/README.md`](server/README.md) for setup and usage instructions for the server.
 
-## Example Clients
+## Example Agents with MCP Clients
 
-- **Autogen**: Uses [Autogen](https://github.com/microsoft/autogen) agents with the MCP tool and Azure OpenAI as the LLM backend. 
-- **OpenAi Agents SDK**: Uses the OpenAI Agents SDK with the MCP tool and Azure OpenAI. 
-- **Semantic Kernel**: Uses [Semantic Kernel](https://github.com/microsoft/semantic-kernel) with the MCP tool and Azure OpenAI.
+- **Autogen** 
+- **OpenAI Agents SDK** 
+- **Semantic Kernel**
 
 See [`clients/README.md`](clients/README.md) for setup and usage instructions for each client.
 

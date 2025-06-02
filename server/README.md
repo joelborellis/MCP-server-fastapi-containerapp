@@ -7,7 +7,7 @@ This README provides instructions and details for the server-side code in the `s
 - `start_server.py`: Script to start the MCP server.
 - `api_key_auth.py`: API key authentication for the server.
 - `prompts/news.md`: Prompt template for news responses.
-- `sample.env`: Example environment file for server configuration.
+- `sample.env`: Example environment file for server configuration, only for local deployment.
 
 ## Setup
 
@@ -42,11 +42,11 @@ See: [Get started with Azure Container Apps](https://learn.microsoft.com/en-us/a
    sh deploy_server_aca_ssh.sh
 ```
 
-
+Check the output message to get the MCP Server's KEY and URL. 
 
 
 ## Notes
 - The server must be running before clients can connect.
-- Ensure your `.env` file is properly configured.
+- Ensure your `.env` file is properly configured with Azure OpenAI endpoint and MCP Server info.
 
 For more details, see comments and docstrings in each server script.

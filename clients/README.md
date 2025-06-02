@@ -13,7 +13,7 @@ This README provides instructions and details for the client-side scripts in the
 1. Copy `sample.env` to `.env` and fill in your credentials:
    ```bash
    cp sample.env .env
-   # Edit .env to add your Azure/OpenAI/MCP keys and endpoints
+   # Edit .env to add your Azure-OpenAI/MCP-Server keys and endpoints
    ```
 2. Install dependencies:
    ```bash
