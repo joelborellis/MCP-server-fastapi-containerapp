@@ -4,7 +4,7 @@ from mcp.server.fastmcp import FastMCP
 import json
 
 # Initialize FastMCP server
-mcp_sport_server = FastMCP("sports")
+mcp_sport_server = FastMCP("sports", streamable_http=True, debug=True)
 
 # Constants
 ESPN_API_BASE = "https://site.api.espn.com"

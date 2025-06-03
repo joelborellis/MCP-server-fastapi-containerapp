@@ -12,6 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 async def lifespan(app: FastAPI):
     async with contextlib.AsyncExitStack() as stack:
         await stack.enter_async_context(mcp_sport_server.session_manager.run())
+        #await stack.enter_async_context(another_server.session_manager.run())  # Here we can run another server
         yield
 
 
@@ -27,6 +28,7 @@ app.add_middleware(
 )
 
 app.mount("/", mcp_sport_server.streamable_http_app())
+#app.mount("/another", another_server.streamable_http_app())
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
