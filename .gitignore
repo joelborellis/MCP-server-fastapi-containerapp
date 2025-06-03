@@ -3,6 +3,7 @@
 uv.lock
 
 # Python-generated files
+server/__pycache__/
 __pycache__/
 *.py[oc]
 build/

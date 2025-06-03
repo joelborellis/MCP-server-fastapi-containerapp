@@ -25,28 +25,32 @@ async def run(mcp_server: MCPServer):
     )
 
     # Use one of the sports tools, it sould use get_nhl_news()
-    message = "Show news for NHL"
+    message = "Show news for NBA"
     print(f"\n\nRunning: {message}")
     result = await Runner.run(starting_agent=agent, input=message)
     print(result.final_output)
 
 
 async def main():
-    async with MCPServerSse(
-        name="SSE Container App Server",
-        params={
-            "url": os.getenv("MCP_URL"),
-            "headers": {
-                "x-api-key": os.getenv("MCP_API_KEYS")
-            },  # api key this is to connect to the mcp server
-        },
-    ) as server:
-        trace_id = gen_trace_id()
-        with trace(workflow_name="MCP Container App Demo", trace_id=trace_id):
-            print(
-                f"View trace: https://platform.openai.com/traces/trace?trace_id={trace_id}\n"
-            )
-            await run(server)
+    try:
+        async with MCPServerSse(
+            name="SSE Container App Server",
+            params={
+                "url": os.getenv("MCP_URL"),
+                "headers": {
+                    "x-api-key": os.getenv("MCP_API_KEYS")
+                },  # api key this is to connect to the mcp server
+            },
+        ) as server:
+            trace_id = gen_trace_id()
+            with trace(workflow_name="MCP Container App Demo", trace_id=trace_id):
+                print(
+                    f"View trace: https://platform.openai.com/traces/trace?trace_id={trace_id}\n"
+                )
+                await run(server)
+    except Exception as e:
+        print(f"Error: {e.args}")
+        
 
 
 if __name__ == "__main__":
