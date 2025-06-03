@@ -34,7 +34,7 @@ async def run(mcp_server: MCPServer):
 async def main():
     try:
         async with MCPServerSse(
-            name="SSE Container App Server",
+            name="MCP Container App Server",
             params={
                 "url": os.getenv("MCP_URL"),
                 "headers": {
