@@ -1,11 +1,11 @@
 from fastapi import FastAPI, Request, Depends
 from mcp.server.sse import SseServerTransport
 from starlette.routing import Mount
-from sports import mcp
+from sports_mcp_server import mcp_sport_server
 from api_key_auth import ensure_valid_api_key
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
-
+import argparse
 
 app = FastAPI(docs_url=None, redoc_url=None, dependencies=[Depends(ensure_valid_api_key)])
 
@@ -27,9 +27,9 @@ async def handle_sse(request: Request):
         read_stream,
         write_stream,
     ):
-        init_options = mcp._mcp_server.create_initialization_options()
+        init_options = mcp_sport_server._mcp_server.create_initialization_options()
 
-        await mcp._mcp_server.run(
+        await mcp_sport_server._mcp_server.run(
             read_stream,
             write_stream,
             init_options,
@@ -37,4 +37,9 @@ async def handle_sse(request: Request):
 
 
         if __name__ == "__main__":
-            uvicorn.run(app, host="0.0.0.0", port=8000)
+            parser = argparse.ArgumentParser(description="Start FastAPI server")
+            parser.add_argument("--host", type=str, default="0.0.0.0", help="Host to bind to (default: 0.0.0.0)")
+            parser.add_argument("--port", type=int, default=8000, help="Port to bind to (default: 8000)")
+            args = parser.parse_args()
+
+            uvicorn.run(app, host=args.host, port=args.port)
