@@ -1,0 +1,8 @@
+python-dotenv
+semantic-kernel
+openai
+requests
+autogen-agentchat 
+autogen-ext[openai]
+openai-agents
+autogen-ext-mcp

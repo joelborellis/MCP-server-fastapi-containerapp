@@ -4,7 +4,7 @@ from mcp.server.fastmcp import FastMCP
 import json
 
 # Initialize FastMCP server
-mcp = FastMCP("sports")
+mcp_sport_server = FastMCP("sports")
 
 # Constants
 ESPN_API_BASE = "https://site.api.espn.com"
@@ -34,14 +34,14 @@ def format_alert(news: dict) -> str:
         """
 
 # Define prompts
-@mcp.prompt()
+@mcp_sport_server.prompt()
 def news() -> str:
     """Global instructions for News"""
     with open("prompts/news.md", "r") as file:
         template = file.read()
     return template
 
-@mcp.tool()
+@mcp_sport_server.tool()
 async def get_cfb_news() -> str:
     """Get news articles for college (NCAA) football.
 
@@ -57,7 +57,7 @@ async def get_cfb_news() -> str:
     news = [format_alert(article) for article in data.get("articles", [])]
     return "\n---\n".join(news)
 
-@mcp.tool()
+@mcp_sport_server.tool()
 async def get_nfl_news() -> str:
     """Get news articles for the National Football League (NFL).
 
@@ -73,7 +73,7 @@ async def get_nfl_news() -> str:
     news = [format_alert(article) for article in data.get("articles", [])]
     return "\n---\n".join(news)
 
-@mcp.tool()
+@mcp_sport_server.tool()
 async def get_mlb_news() -> str:
     """Get news articles for Baseball (MLB).
 
@@ -89,7 +89,7 @@ async def get_mlb_news() -> str:
     news = [format_alert(article) for article in data.get("articles", [])]
     return "\n---\n".join(news)
 
-@mcp.tool()
+@mcp_sport_server.tool()
 async def get_nhl_news() -> str:
     """Get news articles for Hockey (NHL).
 
@@ -105,7 +105,7 @@ async def get_nhl_news() -> str:
     news = [format_alert(article) for article in data.get("articles", [])]
     return "\n---\n".join(news)
 
-@mcp.tool()
+@mcp_sport_server.tool()
 async def get_nhl_team_info(team: str) -> str:
     """Get information about a specific NHL team.
 
@@ -122,7 +122,7 @@ async def get_nhl_team_info(team: str) -> str:
     print(f"Team info:  {info}")
     return "\n---\n".join(info)
 
-@mcp.tool()
+@mcp_sport_server.tool()
 async def get_nba_news() -> str:
     """Get news articles for Basketball (NBA).
 
@@ -140,4 +140,4 @@ async def get_nba_news() -> str:
 
 if __name__ == "__main__":
     # Initialize and run the server
-    mcp.run(transport='streamable-http')
+    mcp_sport_server.run(transport='streamable-http')
