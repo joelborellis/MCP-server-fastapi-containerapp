@@ -6,7 +6,7 @@ from semantic_kernel import Kernel
 from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
 from semantic_kernel.connectors.ai.open_ai import OpenAIChatPromptExecutionSettings
 from semantic_kernel.connectors.ai.function_choice_behavior import FunctionChoiceBehavior
-from semantic_kernel.connectors.mcp import MCPSsePlugin
+from semantic_kernel.connectors.mcp import MCPSsePlugin, MCPStreamableHttpPlugin
 from semantic_kernel.contents import ChatHistory
 from semantic_kernel.contents.streaming_chat_message_content import StreamingChatMessageContent
 from semantic_kernel.contents.utils.author_role import AuthorRole
@@ -38,7 +38,7 @@ async def main():
     
     # api key this is to connect to the mcp server
     # Configure and use the MCP plugin using SSE via async context manager
-    async with MCPSsePlugin(
+    async with MCPStreamableHttpPlugin(
         name="sport_news_server",
         url=os.getenv("MCP_URL"),  # URL where the MCP SSE server is listening
         headers={"x-api-key": os.getenv("MCP_API_KEYS")}

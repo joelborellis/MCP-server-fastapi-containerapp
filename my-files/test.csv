@@ -1,0 +1,10 @@
+animal_name,species,weight_kg,lifespan_years,habitat,diet,conservation_status,nocturnal,max_speed_kmh,interesting_fact
+Koala,Phascolarctos cinereus,13,15,Eucalyptus forests,Herbivore,Vulnerable,Yes,30,Koalas sleep up to 22 hours a day
+Octopus,Octopus vulgaris,10,3,Ocean,Carnivore,Least Concern,Yes,40,Octopuses have three hearts and blue blood
+Elephant,Loxodonta africana,6000,70,Savanna/Forest,Herbivore,Endangered,No,40,Elephants can recognize themselves in mirrors
+Penguin,Spheniscidae,30,20,Antarctica,Carnivore,Near Threatened,No,36,Emperor penguins can dive up to 565 meters deep
+Red Fox,Vulpes vulpes,8,5,Various,Omnivore,Least Concern,Yes,50,Foxes use the Earth's magnetic field to hunt
+Sloth,Bradypus variegatus,6,30,Tropical rainforests,Herbivore,Least Concern,No,0.27,Sloths move so slowly that algae can grow on their fur
+Platypus,Ornithorhynchus anatinus,2,17,Freshwater,Carnivore,Near Threatened,Yes,3,Platypuses are venomous mammals that lay eggs
+Giraffe,Giraffa camelopardalis,1200,25,Savanna,Herbivore,Vulnerable,No,60,Giraffes have the same number of neck vertebrae as humans
+Axolotl,Ambystoma mexicanum,0.3,15,Freshwater lakes,Carnivore,Critically Endangered,No,10,Axolotls can regenerate lost body parts including parts of their brain
