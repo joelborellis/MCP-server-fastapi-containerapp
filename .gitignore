@@ -13,8 +13,9 @@ wheels/
 
 # Virtual environments
 .venv
+.vscode/
 
 # Other files
 sample.json
 NOTES.txt
-./my-files
+.my-files/
