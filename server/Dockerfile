@@ -16,7 +16,7 @@ RUN pip install mcp
 
 
 # Run the application.
-CMD ["uvicorn", "start_server:app", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["uvicorn", "start_server_http:app", "--port", "8000", "--host", "0.0.0.0"]
 
 
 EXPOSE 8000

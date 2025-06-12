@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi[standard]",
-    "mcp[cli]>=1.9.2",
+    "mcp==1.9.3",
     "openai",
     "openai-agents",
     "azure-ai-projects==1.0.0b7",
@@ -14,4 +14,6 @@ dependencies = [
     "azure-ai-agents",
     "aiohttp",
     "semantic-kernel",
+    "backoff>=2.2.1",
+    "halo>=0.0.31",
 ]

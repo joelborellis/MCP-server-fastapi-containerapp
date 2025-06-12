@@ -4,8 +4,8 @@ import asyncio
 
 
 async def main():
-    #url="https://echo-mcp.wittyforest-b30a720d.eastus2.azurecontainerapps.io/mcp/"
-    url="http://localhost:8000/mcp/"
+    url="https://sports-mcp.blackisland-e262cc09.eastus2.azurecontainerapps.io/mcp/"
+    #url="http://localhost:8000/mcp"
     # Connect to a streamable HTTP server
 
     headers = {
