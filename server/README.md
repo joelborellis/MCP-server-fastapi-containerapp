@@ -20,14 +20,14 @@ This README provides instructions and details for the server-side code in the `s
    cp sample.env .env
    # Edit .env to add your API keys and other settings
    ```
-2. Install dependencies:
+2. Install dependencies using uv (Only need to do this once and from the root directory of the project, NOT in the server directory):
    ```bash
    uv sync
    ```
 
 3. Start the server with:
    ```bash
-   uvicorn start_server:app --host 0.0.0.0 --port 8000
+   uv run fastapi dev start_server_http.py
    ```
 
 
@@ -46,6 +46,7 @@ Check the output message to get the MCP Server's KEY and URL.
 
 ## Notes
 - The server must be running before clients can connect.
-- Ensure your `.env` file is properly configured with Azure OpenAI endpoint and MCP Server info.
+- Use the client-http-test.py to test the connection
+- Ensure your `.env` file is properly configured with Azure OpenAI endpoint and MCP Server info and other variables.
 
 For more details, see comments and docstrings in each server script.

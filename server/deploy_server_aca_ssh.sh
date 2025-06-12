@@ -53,4 +53,3 @@ MCP_API_KEYS="$API_KEY"
 MCP_URL="$MCP_URL_FULL"
 ========================================
 EOF
-

@@ -13,14 +13,11 @@ This README provides instructions and details for the client-side scripts in the
 ## Setup
 
 1. Copy `sample.env` to `.env` at the root of this project and fill in your credentials:
-   ```bash
-   cp sample.env .env
+   ```cp sample.env .env
    # Edit .env to add your Azure-OpenAI/MCP-Server keys and endpoints
    ```
-2. Install dependencies using uv:
-   ```bash
-   uv sync
-   ```
+2. Install dependencies using uv (Only need to do this once and from the root directory of the project, NOT in the clients directory):
+   ```uv sync```
 
 ## Running a Client
 
