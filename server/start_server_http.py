@@ -20,10 +20,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan, openapi_url=None, docs_url=None, redoc_url=None, dependencies=[Depends(ensure_valid_api_key)])
 
-transport = StreamableHTTPServerTransport(
-    None,
-    is_json_response_enabled = True,        # JSON replies OK
-)
+#transport = StreamableHTTPServerTransport(
+#    None,
+#    is_json_response_enabled = True,        # JSON replies OK
+#)
 
 # CORS (only needed if you’re calling from a browser front-end)
 app.add_middleware(
@@ -36,9 +36,9 @@ app.add_middleware(
 
 app.mount("/", mcp_sport_server.streamable_http_app())
 #app.mount("/another", another_server.streamable_http_app())
-@app.api_route("/mcp", methods=["GET", "POST"])
-async def handle(req, res):
-    await transport.handle_request(req, res)
+#@app.api_route("/mcp", methods=["GET", "POST"])
+#async def handle(req, res):
+#    await transport.handle_request(req, res)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

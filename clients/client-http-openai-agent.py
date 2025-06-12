@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 async def run(mcp_server: MCPServer, query: str):
 
     azure_openai_client = await get_azure_openai_client()
@@ -44,9 +43,9 @@ async def main():
     async with MCPServerStreamableHttp(
         name="StreamableHttp Container App Server",
         params={
-            "url": "http://localhost:8000/mcp/",
+            "url": os.environ.get("MCP_URL"),
             "headers": {
-                "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"
+                "x-api-key": os.environ.get("MCP_API_KEYS")
             },  # api key this is to connect to the mcp server
         },
     ) as server:

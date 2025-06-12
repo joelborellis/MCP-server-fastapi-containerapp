@@ -1,15 +1,18 @@
 from mcp.client.streamable_http import streamablehttp_client
 from mcp import ClientSession
 import asyncio
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 async def main():
-    url="https://sports-mcp.blackisland-e262cc09.eastus2.azurecontainerapps.io/mcp/"
-    #url="http://localhost:8000/mcp"
+    url=os.environ.get("MCP_URL")
+
     # Connect to a streamable HTTP server
 
     headers = {
-        "x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"
+        "x-api-key": os.environ.get("MCP_API_KEYS")
     }  # api key this is to connect to the mcp server
 
     async with streamablehttp_client(url=url, headers=headers) as (

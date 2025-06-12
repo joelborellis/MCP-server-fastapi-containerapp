@@ -4,10 +4,9 @@ This README provides instructions and details for the server-side code in the `s
 
 ## Files
 - `sports_mcp_server.py`: Main MCP server implementation for sports news.
-- `start_server.py`: Script to start the MCP server.
+- `start_server_http.py`: Script to start the MCP server.
 - `api_key_auth.py`: API key authentication for the server.
 - `prompts/news.md`: Prompt template for news responses.
-- `sample.env`: Example environment file for server configuration, only for local deployment.
 
 ## Setup
 
@@ -16,14 +15,14 @@ This README provides instructions and details for the server-side code in the `s
 
 
 ### Deploying Locally
-1. Copy `sample.env` to `.env` and fill in your server configuration:
+1. Copy `sample.env` to `.env` from the root of the project and fill in your server configuration:
    ```bash
    cp sample.env .env
    # Edit .env to add your API keys and other settings
    ```
 2. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   uv sync
    ```
 
 3. Start the server with:

@@ -75,7 +75,7 @@ async def main():
             {
                 "type": "mcp",
                 "server_label": "sports",
-                "server_url": "https://sports-mcp.blackisland-e262cc09.eastus2.azurecontainerapps.io/mcp/",
+                "server_url": os.environ.get("MCP_URL"),
                 "require_approval": "never",
                 "headers": {"x-api-key": "eff69e24c8f84195a522e7b5df8a0bbc"},
             }

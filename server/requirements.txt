@@ -1,3 +1,0 @@
-uv
-fastapi[standard]
-mcp

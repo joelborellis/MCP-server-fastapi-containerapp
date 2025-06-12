@@ -16,4 +16,5 @@ dependencies = [
     "semantic-kernel",
     "backoff>=2.2.1",
     "halo>=0.0.31",
+    "feedparser>=6.0.11",
 ]

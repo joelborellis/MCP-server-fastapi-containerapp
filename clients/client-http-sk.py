@@ -13,11 +13,9 @@ from semantic_kernel.contents.utils.author_role import AuthorRole
 from semantic_kernel.functions import KernelArguments
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
+load_dotenv()
+
 async def main():
-    # Load environment variables from .env file
-    current_dir = Path(__file__).parent
-    env_path = current_dir / ".env"
-    load_dotenv(dotenv_path=env_path)
     
     # Initialize the kernel
     kernel = Kernel()
@@ -90,7 +88,7 @@ async def main():
     
         except Exception as e:
             print(f"\nError: {str(e)}")
-            print("Make sure the MCP SSE server")
+            print("Make sure the MCP Streamable Http server")
 
 if __name__ == "__main__":
     asyncio.run(main())

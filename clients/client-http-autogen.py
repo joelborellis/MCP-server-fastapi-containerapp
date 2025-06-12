@@ -7,10 +7,7 @@ from autogen_agentchat.agents import AssistantAgent
 from autogen_core.models import UserMessage
 from autogen_ext.models.openai import AzureOpenAIChatCompletionClient
 
-load_dotenv(".env")
-
-
-
+load_dotenv()
 
 async def main():
     # Define server parameters
