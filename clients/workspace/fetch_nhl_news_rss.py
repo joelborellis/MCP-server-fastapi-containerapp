@@ -13,6 +13,7 @@ def fetch_nhl_news_rss():
         else:
             for entry in feed.entries:
                 print(entry.title)
+                print(entry.description)
                 print(entry.link)
                 print()
 

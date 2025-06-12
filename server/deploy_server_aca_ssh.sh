@@ -41,7 +41,7 @@ az containerapp ingress enable \
 
 # Get the FQDN (URL) of the deployed container app
 MCP_URL=$(az containerapp show -n "$APP_NAME" -g "$RESOURCE_GROUP" --query "properties.configuration.ingress.fqdn" -o tsv)
-MCP_URL_FULL="https://$MCP_URL/sse"
+MCP_URL_FULL="https://$MCP_URL/mcp/"
 
 # Print the values for the user to add to their client .env
 cat <<EOF

@@ -1,7 +1,7 @@
 import asyncio
 import os
 
-from agents import Agent, Runner, gen_trace_id, trace, OpenAIChatCompletionsModel
+from agents import Agent, Runner, gen_trace_id, trace, OpenAIResponsesModel
 from openai import AsyncAzureOpenAI
 from agents.mcp import MCPServer, MCPServerStreamableHttp
 from agents.model_settings import ModelSettings
@@ -16,7 +16,7 @@ async def run(mcp_server: MCPServer, query: str):
     agent = Agent(
         name="Assistant",
         instructions="Use the tools to answer the questions.  If there is no tool available, say 'I don't know'.",
-        model=OpenAIChatCompletionsModel(
+        model=OpenAIResponsesModel(
             model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
             openai_client=azure_openai_client,
         ),
