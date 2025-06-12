@@ -62,7 +62,6 @@ async def main():
         if query.lower() == "exit":
             exit(0)
 
-        prompt = open_file("./prompts/prompt.xml")
         # Create conversation
         conversation = list()
         conversation.append(
@@ -86,7 +85,7 @@ async def main():
         chat_kwargs = {
             "input": conversation,
             "model": OPENAI_MODEL,
-            "instructions": prompt,
+            "instructions": "Use the tools to answer the questions.  If there is no tool available, say 'I don't know'.",
             "tools": tools,
             "tool_choice": "auto",
         }
