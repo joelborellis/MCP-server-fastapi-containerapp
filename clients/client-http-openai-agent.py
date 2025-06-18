@@ -24,11 +24,21 @@ async def run(mcp_server: MCPServer, query: str):
         model_settings=ModelSettings(tool_choice="required"),
     )
 
-    # Use one of the sports tools, it sould use get_nhl_news()
+    # Use one of the sports tools
     message = query
+    tool_calls = []
     print(f"\n\nRunning: {message}")
-    result = await Runner.run(starting_agent=agent, input=message)
-    print(result.final_output)
+    result =  Runner.run_streamed(starting_agent=agent, input=message, max_turns=30)
+    async for event in result.stream_events():
+            if event.type == "run_item_stream_event":
+                print(f"Got event of type {event.item.__class__.__name__}")
+                if hasattr(event.item, "raw_item") and hasattr(event.item.raw_item, "name"):
+                    tool_name = event.item.raw_item.name
+                    tool_calls.append(tool_name)
+                    print(f"Tool called: {tool_name}")
+
+    print(f"All tools called during run: {tool_calls}")
+    print(f"Done streaming; final result: \n{result.final_output}")
 
 
 async def get_azure_openai_client():

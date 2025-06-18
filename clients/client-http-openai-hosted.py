@@ -59,7 +59,7 @@ async def main(verbose: bool, stream: bool):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--verbose", action="store_true", default=False)
-    parser.add_argument("--stream", action="store_true", default=True)
+    parser.add_argument("--stream", action="store_true", default=False)
     args = parser.parse_args()
 
     asyncio.run(main(args.verbose, args.stream))

@@ -33,7 +33,7 @@ async def main():
                 print(f"  - {tool.name}: {tool.description}")
 
             # Call our calculator tool
-            result = await session.call_tool("get_mlb_news")
+            result = await session.call_tool("get_nascar_news")
             print(f"{result.content[0].text}")
             
 if __name__ == "__main__":

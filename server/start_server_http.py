@@ -1,19 +1,17 @@
 # main.py
 import contextlib
 from fastapi import FastAPI, Depends
-from sports_mcp_server import mcp_sport_server
+from .sports_news_server import sports_news_server
 import uvicorn
-from api_key_auth import ensure_valid_api_key
+from .api_key_auth import ensure_valid_api_key
 from fastapi.middleware.cors import CORSMiddleware
-from mcp.server.streamable_http import StreamableHTTPServerTransport
-
 
 
 # Create a lifespan to manage session manager
 @contextlib.asynccontextmanager
 async def lifespan(app: FastAPI):
     async with contextlib.AsyncExitStack() as stack:
-        await stack.enter_async_context(mcp_sport_server.session_manager.run())
+        await stack.enter_async_context(sports_news_server.session_manager.run())
         #await stack.enter_async_context(another_server.session_manager.run())  # Here we can run another server
         yield
 
@@ -34,7 +32,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/", mcp_sport_server.streamable_http_app())
+app.mount("/news", sports_news_server.streamable_http_app())
 #app.mount("/another", another_server.streamable_http_app())
 #@app.api_route("/mcp", methods=["GET", "POST"])
 #async def handle(req, res):

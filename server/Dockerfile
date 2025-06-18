@@ -1,22 +1,22 @@
 FROM python:3.13-slim
 
-WORKDIR /
+WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-COPY . .
+COPY pyproject.toml uv.lock* ./
+COPY server ./server
 
-# Install uv and dependencies from pyproject.toml
-RUN pip install uv 
-RUN pip install fastapi[standard]
-RUN pip install mcp
+RUN python -m venv .venv \
+    && . .venv/bin/activate \
+    && pip install --no-cache-dir --upgrade pip \
+    && pip install uv \
+    && uv sync
 
+ENV PATH="/app/.venv/bin:$PATH"
 
-
-# Run the application.
-CMD ["uvicorn", "start_server_http:app", "--port", "8000", "--host", "0.0.0.0"]
-
+CMD ["uvicorn", "server.start_server_http:app", "--port", "8000", "--host", "0.0.0.0"]
 
 EXPOSE 8000
