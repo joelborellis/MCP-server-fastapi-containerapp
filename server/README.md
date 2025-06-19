@@ -27,6 +27,7 @@ This README provides instructions and details for the server-side code in the `s
 
 3. Start the server with:
    ```bash
+   cd server
    uv run fastapi dev start_server_http.py
    ```
 
@@ -37,6 +38,7 @@ The easiest way to deploy to Azure is by using the Azure CLI command `az contain
 See: [Get started with Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/get-started?tabs=bash)
 
 ```bash
+   cd server
    az login --tenant YOUR_TENANT_ID
    sh deploy_server_aca_ssh.sh
 ```
@@ -48,5 +50,13 @@ Check the output message to get the MCP Server's KEY and URL.
 - The server must be running before clients can connect.
 - Use the client-http-test.py to test the connection
 - Ensure your `.env` file is properly configured with Azure OpenAI endpoint and MCP Server info and other variables.
+
+## Troubleshoot
+- If you CANNOT run sh scripts then from with VSCode terminal you can deploy via contrainerapp up
+
+```cd server
+   az login --tenant YOUR_TENANT_ID
+   az containerapp up -g [YOUR RESOURCE GROUP] -n [CONTAINER APP NAME] --environment [CONTAINER APP ENV] -l [AZURE REGION] --source .
+```
 
 For more details, see comments and docstrings in each server script.
