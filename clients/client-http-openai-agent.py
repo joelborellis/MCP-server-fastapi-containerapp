@@ -7,7 +7,30 @@ from agents.mcp import MCPServer, MCPServerStreamableHttp
 from agents.model_settings import ModelSettings
 from dotenv import load_dotenv
 
+from rich.console import Console
+from rich.markdown import Markdown
+
+ # Create Rich console for Markdown rendering
+console = Console()
+
 load_dotenv()
+
+INSTRUCTIONS = """You are a sports news summarizer.
+      Please respond ONLY in markdown in the following format. Use this format for all the news stories:
+
+      ## {sport} News
+      - **Sport**: {sport}         
+        - **Source**: {source}
+        - **URL**: {link}
+        - **Description**:
+        - {description}
+        - **Content**:
+        - {content}
+        - **Published**: {published}    
+
+      Include multiple news items for each sport in the array. Do not include any other text.
+      Summarize the 'content' of the news story in only three (3) bullet points that capture the highlights of thee news story.
+"""
 
 async def run(mcp_server: MCPServer, query: str):
 
@@ -15,7 +38,7 @@ async def run(mcp_server: MCPServer, query: str):
 
     agent = Agent(
         name="Assistant",
-        instructions="Use the tools to answer the questions.  If there is no tool available, say 'I don't know'.",
+        instructions=INSTRUCTIONS,
         model=OpenAIResponsesModel(
             model=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME"),
             openai_client=azure_openai_client,
@@ -38,7 +61,11 @@ async def run(mcp_server: MCPServer, query: str):
                     print(f"Tool called: {tool_name}")
 
     print(f"All tools called during run: {tool_calls}")
-    print(f"Done streaming; final result: \n{result.final_output}")
+    
+    # Render the content as Markdown
+    md = Markdown(result.final_output)
+    console.print(md)
+    print()  # Add an extra line for readability
 
 
 async def get_azure_openai_client():

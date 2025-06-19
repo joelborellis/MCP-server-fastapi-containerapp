@@ -6,7 +6,13 @@ import asyncio
 import backoff
 import time
 
+from rich.console import Console
+from rich.markdown import Markdown
+
 load_dotenv()
+
+# Create Rich console for Markdown rendering
+console = Console()
 
 # setup the OpenAI Client
 client = AsyncOpenAI()
@@ -96,7 +102,11 @@ async def main():
 
         response_id, text, model, tokens, formatted_time = await chat(**chat_kwargs)
 
-        print(f"{text}\n")
+        # Render the content as Markdown
+        md = Markdown(text)
+        console.print(md)
+        print()  # Add an extra line for readability
+        
         print(f"Model used: {model}")
         print(f"Your question took a total of: {tokens.total_tokens} tokens")
         print(

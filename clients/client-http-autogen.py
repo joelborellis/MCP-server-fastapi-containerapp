@@ -2,16 +2,22 @@ import asyncio
 import os
 
 from dotenv import load_dotenv
-from autogen_ext.tools.mcp import SseServerParams, mcp_server_tools,SseMcpToolAdapter
+from autogen_ext.tools.mcp import mcp_server_tools, StreamableHttpServerParams
 from autogen_agentchat.agents import AssistantAgent
 from autogen_core.models import UserMessage
 from autogen_ext.models.openai import AzureOpenAIChatCompletionClient
 
+from rich.console import Console
+from rich.markdown import Markdown
+
 load_dotenv()
+
+# Create Rich console for Markdown rendering
+console = Console()
 
 async def main():
     # Define server parameters
-    news_server_params = SseServerParams(
+    news_server_params = StreamableHttpServerParams(
         url=os.getenv("MCP_URL"),
         headers={
             "x-api-key": os.getenv("MCP_API_KEYS")
@@ -49,7 +55,11 @@ async def main():
 
 
     result = await agent.run(task="get NFL news")
-    print(result.messages[-1].content)
+    
+    # Render the content as Markdown
+    md = Markdown(result.messages[-1].content)
+    console.print(md)
+    print()  # Add an extra line for readability
 
 
 if __name__ == "__main__":

@@ -3,10 +3,10 @@
 This README provides instructions and details for the server-side code in the `server/` directory.
 
 ## Files
-- `sports_mcp_server.py`: Main MCP server implementation for sports news.
-- `start_server_http.py`: Script to start the MCP server.
+- `sports_news_server.py`: Main MCP server implementation for sports news.
+- `start_server_http.py`: FastAPI server.
 - `api_key_auth.py`: API key authentication for the server.
-- `prompts/news.md`: Prompt template for news responses.
+- `prompts/news.md`: Prompt template for news responses.  Not being used right now.
 
 ## Setup
 

@@ -6,6 +6,12 @@ from dotenv import load_dotenv
 from agents import Agent, HostedMCPTool, Runner, OpenAIResponsesModel
 from openai import AsyncAzureOpenAI
 
+from rich.console import Console
+from rich.markdown import Markdown
+
+ # Create Rich console for Markdown rendering
+console = Console()
+
 """This example demonstrates how to use the hosted MCP support in the OpenAI Responses API, with
 approvals not required for any tools. You should only use this for trusted MCP servers."""
 
@@ -49,11 +55,18 @@ async def main(verbose: bool, stream: bool):
         print(f"Done streaming; final result: \n{result.final_output}")
     else:
         res = await Runner.run(agent, "Show news for MLB?")
-        print(res.final_output)
+        
+        # Render the content as Markdown
+        md = Markdown(res.final_output)
+        console.print(md)
+        print()  # Add an extra line for readability
 
     if verbose:
         for item in res.new_items:
-            print(item)
+            # Render the content as Markdown
+            md = Markdown(item)
+            console.print(md)
+            print()  # Add an extra line for readability
 
 
 if __name__ == "__main__":

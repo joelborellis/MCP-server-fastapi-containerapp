@@ -1,7 +1,5 @@
 from typing import Any
-import httpx
 from mcp.server.fastmcp import FastMCP
-import json
 import feedparser
 from bs4 import BeautifulSoup
 
@@ -9,24 +7,8 @@ from bs4 import BeautifulSoup
 sports_news_server = FastMCP("sports", stateless_http=True, debug=True)
 
 # Constants
-ESPN_API_BASE = "https://site.api.espn.com"
-USER_AGENT = "sports-app/1.0"
-
-# Constants
 YAHOO_API_BASE = "https://sports.yahoo.com/"
 USER_AGENT = "sports-app/1.0"
-
-
-async def make_espn_request(url: str) -> dict[str, Any] | None:
-    """Make a request to ESPN API with proper error handling."""
-    headers = {"User-Agent": USER_AGENT, "Accept": "application/json"}
-    async with httpx.AsyncClient() as client:
-        try:
-            response = await client.get(url, headers=headers, timeout=30.0)
-            response.raise_for_status()
-            return response.json()
-        except Exception:
-            return None
 
 
 async def make_yahoo_request(url: str) -> dict[str, Any] | None:
