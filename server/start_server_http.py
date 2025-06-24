@@ -32,7 +32,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/news", sports_news_server.streamable_http_app())
+app.mount("/mcp", sports_news_server.streamable_http_app())
 #app.mount("/another", another_server.streamable_http_app())
 #@app.api_route("/mcp", methods=["GET", "POST"])
 #async def handle(req, res):
