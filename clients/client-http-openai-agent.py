@@ -32,7 +32,7 @@ INSTRUCTIONS = """You are a sports news summarizer.
       Summarize the 'content' of the news story in only three (3) bullet points that capture the highlights of thee news story.
 """
 
-async def run(mcp_server: MCPServer, query: str):
+async def run(mcp_server: MCPServerStreamableHttp, query: str):
 
     azure_openai_client = await get_azure_openai_client()
 
@@ -51,6 +51,7 @@ async def run(mcp_server: MCPServer, query: str):
     message = query
     tool_calls = []
     print(f"\n\nRunning: {message}")
+    result =  await Runner.run_streamed(starting_agent=agent, input=message, max_turns=30)
     result =  Runner.run_streamed(starting_agent=agent, input=message, max_turns=30)
     async for event in result.stream_events():
             if event.type == "run_item_stream_event":
